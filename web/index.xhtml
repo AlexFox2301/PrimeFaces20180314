@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Autorization</title>
+    <link rel="shortcut icon" type="image/png" href="galereya/drel-drawing.png" />
+    <h:outputStylesheet library="css" name="style.css"/>
+</h:head >
+
+<h:body styleClass="total">
+
+    <h2 align="center">ЧП "РИО" </h2>
+    <p align="center" >MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
+    <h1 align="center">Войти в систему</h1>
+
+<f:view>
+
+    <h:form>
+
+
+
+        <h:panelGrid columns="2" cellpadding="3" style="width: 30%; margin-right: 35%; margin-left: 35%">
+
+            <h:outputLabel for="name" value="Логин:" style="font-weight:bold; font-size: 20px" styleClass="loginPage"/>
+            <p:inputText id="name"  value="#{userBean.login}" styleClass="loginPage" style="width: 100%"/>
+
+            <h:outputText value="Пароль: " style="font-weight:bold; font-size: 20px" styleClass="loginPage"/>
+            <p:password id="nonFeedback" value="#{userBean.password}" styleClass="loginPage" style="width: 100%"/>
+
+            <p:commandButton value="Войти" action="#{userBean.checkPassword}" update="growl" styleClass="loginPage" style="width: 100%; font-family: serif; font-size: 18px"/>
+
+            <p:growl id="growl" life="2000"/>
+
+        </h:panelGrid>
+
+    </h:form>
+
+</f:view>
+
+</h:body>
+
+</html>

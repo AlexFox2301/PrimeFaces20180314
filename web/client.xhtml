@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://primefaces.org/ui ">
+
+<h:head>
+    <title>Employee_Base</title>
+    <link rel="shortcut icon" type="image/png" href="galereya/drel-drawing.png" />
+    <!--<h:outputStylesheet library="css" name="style.css"/>-->
+</h:head>
+
+<h:body style="background-color: darkgray">
+
+    <h2 align="center">ЧП "РИО" </h2>
+    <p align="center" >MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
+    <h1 align="center">Сотрудники</h1>
+
+
+    <p:inputText value="#{clientBean.searchText}" placeholder="Поиск" style="width: 400px; margin: 5px; border-radius: 7px; font-family: serif; font-size: 16px"/>
+    <p:commandButton value="Поиск" actionListener="#{clientBean.search}" style="width: 150px; margin: 5px; font-family: serif; font-size: 16px"/>
+    <br/>
+
+    <p:layout style="background-color: darkgray">
+
+        <p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" styleClass="col_left" >
+            <p:button value="Добавить" href="newClientKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Редактировать" href="newClientKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:commandButton value="Удалить" actionListener="#{clientBean.deleted}" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Меню" href="home.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Выход" href="index.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+        </p:layoutUnit>
+
+
+        <p:layoutUnit position="center">
+
+            <f:view>
+                <p:dataTable var="client" value="#{clientBean.clients}" rendered="#{not empty clientBean.clients}">
+
+                    <p:column headerText="Id" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{client.id}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                    <p:column headerText="Фамилия" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{client.clientLastName}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                    <p:column headerText="Имя" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{client.clientFirstName}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                    <p:column headerText="Отчество" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{client.clientFatherName}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                    <p:column headerText="Адрес" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{client.adressHome}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                    <p:column headerText="Телефон" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{client.clientPhoneNumder}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                    <p:column headerText="E-mail" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{client.e_mail}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                    <p:column headerText="Дата регистрации" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{client.dateRegistration}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                </p:dataTable>
+
+            </f:view>
+
+        </p:layoutUnit>
+
+
+        <p:layoutUnit position="east" resizable="true" maxSize="120" minSize="50" styleClass="col_left">
+            <p:button value="Заказы" href="orderBook.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Сотрудники" href="employee.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Склад" href="stock.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Поставщики" href="vendor.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Галерея" href="galereya.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+        </p:layoutUnit>
+
+    </p:layout>
+
+</h:body>
+</html>

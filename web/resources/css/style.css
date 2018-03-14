@@ -1,0 +1,131 @@
+.total{
+    background-color: darkgray;
+}
+
+.index {
+   
+}
+
+[class*='col_']{
+    float: left;
+}
+
+.col_left {
+    width: 10%;
+    background-color: darkgray;
+    border-radius: 10px;
+    color: grey;
+/*    margin: 10;*/
+/*    font-size: 14px;*/
+/*
+    transform-origin: bottom;
+    transform: rotate(-90deg)
+*/
+}
+
+.col_centr {
+    width: 80%;
+    background-color: darkgray;
+    color: darkgray;
+/*    margin: 5;*/
+/*    font-size: 14px;*/
+}
+
+.col_right {
+    width: 10%;
+    background-color: darkgray;
+    border-radius: 10px;
+    color: grey;
+/*    margin: 10;*/
+/*    font-size: 18px;*/
+/*
+    transform-origin: bottomright;
+    transform: rotate(90deg);
+*/
+}
+
+.grid {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.menuButtom{
+    background-color: gray;
+    width: 30%;
+    height: 35%;
+    margin: 3%;
+    border-radius: 15px;
+}
+
+.buttom{
+    width: 90%;
+    padding: 15px;
+    margin: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: grey;
+    border-radius: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.search{
+    width: 20%;
+    padding: 5px;
+    margin: 5px;
+    border-color: grey;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+.input{
+    
+    width: 99%;
+    padding: 2px;
+    margin: 5px;
+    border-color: grey;
+/*    background-color: lightgray;*/
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: serif;
+}
+
+.loginPage{    
+
+    padding: 2px;
+    /*margin: 5px;*/
+    border-color: grey;
+/*    background-color: lightgray;*/
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.buttomFind{
+    width: 150px;
+    padding: 5px;
+    margin: 5px;
+    background-color: grey;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.table{
+    width: 100%;
+/*    border: 2px;*/
+/*    border-color: blue;*/
+/*    border: 2px;*/
+    background-color: lightgrey;
+    font-size: 12px;
+    font-family: serif;
+}
+
+.image{
+    height: 220px;
+}
+
+/**, *:after, *:before {*/
+  /*-webkit-box-sizing: border-box;*/
+  /*-moz-box-sizing: border-box;*/
+  /*box-sizing: border-box;*/
+/*}*/
