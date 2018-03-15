@@ -36,6 +36,11 @@ public class User {
     @Basic
     private Date dateOfDismissal;       //Дата увольнения
 
+
+    @OneToMany(mappedBy = "employee")//, fetch = FetchType.EAGER
+    private Collection<Zakaz> zakazes;
+
+
     public String getFoto() {
         return foto;
     }
@@ -157,8 +162,7 @@ public class User {
         return lff;
     }
 
-    @OneToMany(mappedBy = "employee")//, fetch = FetchType.EAGER
-    private Collection<Zakaz> zakazes;
+
 
     public Collection<Zakaz> getZakazes() {
         return zakazes;

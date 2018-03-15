@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="eclipselink-2.6.2">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../Libs/eclipselink-2.6.2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../Libs/commonj.sdo-2.1.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../Libs/validation-api-1.1.0.Final.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../Libs/javax.json-1.0.4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../Libs/mysql-connector-java-5.1.38.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/libs/javax.persistence/javax.persistence-2.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/libs/commonj.sdo-2.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/libs/eclipselink-2.6.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/libs/javax.json-1.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/libs/mysql-connector-java-5.1.38.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/libs/validation-api-1.1.0.Final.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

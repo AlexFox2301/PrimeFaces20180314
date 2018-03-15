@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>New Employee Kard</title>
+    <link rel="shortcut icon" type="image/png" href="galereya/drel-drawing.png" />
+    <h:outputStylesheet library="css" name="style.css"/>
+</h:head>
+
+<h:body styleClass="total">
+
+    <h2 align="center">ЧП "РИО" </h2>
+    <p align="center" >MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
+    <h1 align="center">Карточка сотрудника</h1>
+
+    <h:form>
+        <p:growl id="messages" showDetail="true" />
+
+    <h:panelGrid columns="2" cellpadding="12" style="width: 100%; font-family: serif">
+
+        <p:graphicImage value="Foto" url="galereya/drel_i_mozgi.png" alt="Add foto" style="width: 300px; border: 1px; background-color: "/>
+        <p:fileUpload value="#{employeeBean.file}" mode="simple" skinSimple="true"/>
+
+        <p:outputLabel value="Last Name" for="lastName" style="font-family: serif"/>
+        <p:inputText id="lastName" value="#{employee.lastName}" style="width: 100%" styleClass="input"/>
+
+        <p:outputLabel value="First Name" for="firstName" />
+        <p:inputText id="firstName" value="#{employee.firstName}" style="width: 100%" styleClass="input"/>
+
+        <p:outputLabel value="Father Name" for="fatherName" />
+        <p:inputText id="fatherName" value="#{employee.fatherName}" style="width: 100%" styleClass="input"/>
+
+        <p:outputLabel value="Position" for="position" />
+        <p:inputText id="position" value="#{employee.position}" style="width: 100%" styleClass="input"/>
+
+        <p:outputLabel value="Address" for="address" />
+        <p:inputText id="address" value="#{employee.address}" style="width: 100%"/>
+
+        <p:outputLabel value="Phone Number" for="phoneNumber" />
+        <p:inputText id="phoneNumber" value="#{employee.phoneNumber}" mask="(999) 999-9999" style="width: 100%" styleClass="input"/>
+
+        <p:outputLabel value="E_mail" for="e_mail" />
+        <p:inputText id="e_mail" value="#{employee.e_mail}" style="width: 100%" styleClass="input"/>
+
+        <p:outputLabel value="Date Admissiom" for="dateAdmissiom" />
+        <p:inputText id="dateAdmissiom" value="#{employee.dateAdmissiom}" mask="99/99/9999" style="width: 100%" styleClass="input"/>
+
+        <p:outputLabel value="Date Of Dismissal" for="dateOfDismissal" />
+        <p:inputText id="dateOfDismissal" value="#{employee.dateOfDismissal}" mask="99/99/9999" style="width: 100%" styleClass="input"/>
+
+        <p:outputLabel value="Login" for="login" />
+        <p:inputText id="login" value="#{employee.login}" style="width: 100%" styleClass="input"/>
+
+        <p:outputLabel value="Password" for="password" />
+        <p:inputText id="password" value="#{employee.password}" style="width: 100%" styleClass="input"/>
+
+    </h:panelGrid>
+
+        <p:button value="Отправить" style="width: 200px; margin: 20px; border-radius: 10px"/>
+        <p:button value="Отмена" style="width: 200px; margin: 20px; border-radius: 10px"/>
+
+    </h:form>
+
+   
+
+    
+        <!--<form>-->
+            <!---->
+            <!--<datalist id="cost">-->
+                <!--<option value="Директор">-->
+                <!--<option value="Водитель">-->
+                <!--<option value="Дизайнер">-->
+                <!--<option value="Технолог">-->
+                <!--<option value="Агент снабжения">-->
+                <!--<option value="Сборщик">-->
+            <!--</datalist>-->
+           <!---->
+        <!--</form>-->
+
+
+    
+</h:body>
+</html>

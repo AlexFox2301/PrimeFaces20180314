@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Galereya</title>
+    <link rel="shortcut icon" type="image/png" href="galereya/drel-drawing.png" />
+    <h:outputStylesheet library="css" name="style.css"/>
+</h:head>
+
+<h:body styleClass="total">
+
+<h2 align="center">ЧП "РИО" </h2>
+<p align="center" >MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
+<h1 align="center">Галерея</h1>
+
+    <p:layout style="background-color: darkgray">
+
+        <p:layoutUnit position="west" resizable="true" maxSize="200" minSize="50" styleClass="col_left" style="background-color: darkgray">
+            <p:commandButton value="Удалить" actionListener="#{vendorBean.deleted}" styleClass="buttom"/>
+            <p:button value="Меню" href="home.xhtml" styleClass="buttom"/>
+            <p:button value="Выход" href="index.xhtml" styleClass="buttom"/>
+        </p:layoutUnit>
+
+
+        <p:layoutUnit position="center">
+
+            <p align="center">
+
+            <p:commandLink actionListener="#{orderBean.images(bed)}" onclick="window.open('viewFoto.xhtml')">
+                <p:graphicImage url="galereya/bedTitle.jpg" styleClass="image" style="height: 220px"/>
+            </p:commandLink>
+
+
+            <p:commandLink actionListener="#{orderBean.images(cabinet)}" onclick="window.open('viewFoto.xhtml')">
+                <p:graphicImage url="galereya/cabitetTitle.jpg" styleClass="image" style="height: 220px"/>
+            </p:commandLink>
+
+
+            <p:commandLink actionListener="#{orderBean.images(wardrobeCompartment)}" onclick="window.open('viewFoto.xhtml')">
+                <p:graphicImage url="galereya/wardrobeCompartmentTitle.jpg" styleClass="image" style="height: 220px"/>
+            </p:commandLink>
+
+
+            <p:commandLink actionListener="#{orderBean.images(kitchen)}" onclick="window.open('viewFoto.xhtml')">
+                <p:graphicImage url="galereya/kitchenTitle.jpg" styleClass="image" style="height: 220px"/>
+            </p:commandLink>
+
+
+            <p:commandLink actionListener="#{orderBean.images(childrenRoom)}" onclick="window.open('viewFoto.xhtml')">
+                <p:graphicImage url="galereya/childrenRoomTitle.jpg" styleClass="image" style="height: 220px"/>
+            </p:commandLink>
+
+
+            <p:commandLink actionListener="#{orderBean.images(computerDesk)}" onclick="window.open('viewFoto.xhtml')">
+                <p:graphicImage url="galereya/computerDeskTitle.jpg" styleClass="image" style="height: 220px"/>
+            </p:commandLink>
+
+
+            <p:commandLink actionListener="#{orderBean.images(table)}" onclick="window.open('viewFoto.xhtml')">
+                <p:graphicImage url="galereya/tableTitle.jpg" styleClass="image" style="height: 220px"/>
+            </p:commandLink>
+
+            <p:commandLink actionListener="#{orderBean.images(hallway)}" onclick="window.open('viewFoto.xhtml')">
+                <p:graphicImage url="galereya/hallwayTitle.jpg" styleClass="image" style="height: 220px"/>
+            </p:commandLink>
+
+            </p>
+        </p:layoutUnit>
+
+
+        <p:layoutUnit position="east" resizable="true" maxSize="200" minSize="50" styleClass="col_left">
+            <p:button value="Заказы" href="orderBook.xhtml" styleClass="buttom"/>
+            <p:button value="Клиенты" href="client.xhtml" styleClass="buttom"/>
+            <p:button value="Сотрудники" href="employee.xhtml" styleClass="buttom"/>
+            <p:button value="Склад" href="stock.xhtml" styleClass="buttom"/>
+            <p:button value="Поставщики" href="vendor.xhtml" styleClass="buttom"/>
+        </p:layoutUnit>
+
+    </p:layout>
+
+</h:body>
+</html>

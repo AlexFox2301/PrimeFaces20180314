@@ -1,0 +1,78 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Report Order</title>
+    <link rel="icon" href="galereya/drel-drawing.png">
+    <link rel="stylesheet" href="resources/css/style.css">
+</head>
+
+<body class="total">
+
+    <header>
+        <h2 align="center">ЧП "РИО" </h2>
+        <p align="center" class="footer" width="100%">MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
+    </header>
+
+    <main>
+        <h1 align="center">Параметры отчета по заказм</h1>
+        <form>
+            <table border="1" class="table">
+                <tr>
+                    <td width="20%">Период от</td>
+                    <td><input type="date" id="input"></td>
+                </tr>
+                <tr>
+                    <td>Период до</td>
+                    <td><input type="date" id="input"></td>
+                </tr>
+                <tr>
+                    <td>Клиент</td>
+                    <td><input type="text" placeholder="ФИО и ID" required size="50" name="client" id="input">
+                    </td>
+                </tr>
+                <tr>
+                    <td >Наименование</td>
+                    <td ><input type="text" name="nameOrder" list="nameOrder" id="input"></td>
+                </tr>
+                <tr>
+                    <td>Исполнитель</td>
+                    <td><input type="text" placeholder="ФИО" name="collector" id="input" list="nameCollector"></td>
+                </tr>
+                
+                <tr>
+                    <td>Статус </td>
+                    <td><input type="checkbox">(принят, не принят)</td>
+                </tr>
+                <tr>
+                    <td>Состояние</td>
+                    <td><input type="checkbox">(сдан, не сдан)</td>
+                </tr>
+            </table>
+            <input type="submit" class="buttomFind">            
+        
+        
+            <datalist id="nameOrder">
+                <option value="Кухня">
+                <option value="Детская">
+                <option value="Прихожая">
+                <option value="Шкаф купе">
+                <option value="Стол">
+                <option value="Стол компьютерный">
+                <option value="Горка">
+                <option value="Кровать">
+                <option value="Прочее">
+            </datalist>
+            
+            <datalist id="nameCollector">
+                <option value="Орехов В.А.">
+                <option value="Белоус А.П.">
+                <option value="Юрченко В.Ю.">
+            </datalist>
+        </form>
+        <a href="orderBook.xhtml">
+                <button class="buttomFind">Выйти</button>
+            </a>
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,98 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>New Order Kard</title>
+    <link rel="icon" href="galereya/drel-drawing.png">
+    <link rel="stylesheet" href="resources/css/style.css">
+</head>
+
+<body class="total">
+
+    <header>
+        <h2 align="center">ЧП "РИО" </h2>
+        <p align="center" class="footer" width="100%">MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
+    </header>
+
+    <main>
+        <h1 align="center">Карточка заказа</h1>
+        <form>
+            <table border="1" class="table">
+                <tr>
+                    <td width="20%">ID заказа</td>
+                    <td class="orderCard"><input type="text" readonly name="idOrder" id="input"></td>
+                </tr>
+                <tr>
+                    <td >Клиент</td>
+                    <td ><input type="text" placeholder="ФИО и ID" required size="50" name="client" id="input">
+                    </td>
+                </tr>
+                <tr>
+                    <td >Наименование</td>
+                    <td ><input type="text" name="nameOrder" list="nameOrder" id="input"></td>
+                </tr>
+                <tr>
+                    <td >Срок выполнения</td>
+                    <td ><input type="date" required name="deadLine" id="input"></td>
+                </tr>
+                <tr>
+                    <td>Себестоимость</td>
+                    <td><input type="text" name="costPrice" id="input"></td>
+                </tr>
+                <tr>
+                    <td>Стоимость</td>
+                    <td><input type="text" name="value" id="input"></td>
+                </tr>
+                <tr>
+                    <td>Адрес заказа</td>
+                    <td><input type="text" required size="50" name="adresOrder" id="input"></td>
+                </tr>
+                <tr>
+                    <td>Замер</td>
+                    <td><input type="file" multiple name="measurement" id="input"></td>
+                </tr>
+                <tr>
+                    <td>Дизайн модель</td>
+                    <td><input type="file" multiple name="designModel" id="input"></td>
+                </tr>
+                <tr>
+                    <td>Технологическая документация</td>
+                    <td><input type="file" multiple name="TechnologicalDocumentation" id="input"></td>
+                </tr>
+                <tr>
+                    <td>Фото заказа</td>
+                    <td><input type="file" accept="image/*" multiple name="fotoOrder" id="input"></td>
+                </tr>
+                <tr>
+                    <td>Исполнитель</td>
+                    <td><input type="text" placeholder="ФИО и ID исполнителя" name="collector" id="input"></td>
+                </tr>
+                <tr>
+                    <td>Дата сдачи заказа</td>
+                    <td><input type="date" name="dateDelivery" id="input"></td>
+                </tr>
+                <tr>
+                    <td>Примечание</td>
+                    <td><textarea name="note" cols="50" rows="10" wrap="soft" id="input"></textarea></td>
+                </tr>
+            </table>
+            <input type="submit" class="buttomFind">            
+        
+        
+            <datalist id="nameOrder">
+                <option value="Кухня">
+                <option value="Детская">
+                <option value="Прихожая">
+                <option value="Шкаф купе">
+                <option value="Стол">
+                <option value="Стол компьютерный">
+                <option value="Горка">
+                <option value="Кровать">
+            </datalist>
+        </form>
+        <a href="orderBook.xhtml">
+                <button class="buttomFind">Выйти</button>
+            </a>
+    </main>
+    
+</body>
+</html>
