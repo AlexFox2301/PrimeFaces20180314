@@ -18,7 +18,7 @@
 
     <h2 align="center">ЧП "РИО" </h2>
     <p align="center" >MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
-    <h1 align="center">Сотрудники</h1>
+    <h1 align="center">Клиенты</h1>
 
 
     <p:inputText value="#{clientBean.searchText}" placeholder="Поиск" style="width: 400px; margin: 5px; border-radius: 7px; font-family: serif; font-size: 16px"/>
@@ -41,7 +41,7 @@
             <f:view>
                 <p:dataTable var="client" value="#{clientBean.clients}" rendered="#{not empty clientBean.clients}">
 
-                    <p:column headerText="Id" style="font-family: serif; font-size: 14px">
+                    <p:column headerText="Id" style="font-family: serif; font-size: 14px; width: 5%">
                         <h:outputText value="#{client.id}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 

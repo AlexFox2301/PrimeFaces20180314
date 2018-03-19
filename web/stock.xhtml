@@ -39,7 +39,7 @@
             <f:view>
                 <p:dataTable var="fitting" value="#{fittingBean.fittings}" rendered="#{not empty fittingBean.fittings}">
 
-                    <p:column headerText="Id" style="font-family: serif; font-size: 14px">
+                    <p:column headerText="Id" style="font-family: serif; font-size: 14px;  width: 5%">
                         <h:outputText value="#{fitting.id}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
@@ -47,11 +47,11 @@
                         <h:outputText value="#{fitting.nameFitting}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
-                    <p:column headerText="Количество" style="font-family: serif; font-size: 14px">
+                    <p:column headerText="Количество" style="font-family: serif; font-size: 14px;  width: 15%">
                         <h:outputText value="#{fitting.quantity}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
-                    <p:column headerText="Цена" style="font-family: serif; font-size: 14px">
+                    <p:column headerText="Цена" style="font-family: serif; font-size: 14px;  width: 15%">
                         <h:outputText value="#{fitting.priceFittings}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 

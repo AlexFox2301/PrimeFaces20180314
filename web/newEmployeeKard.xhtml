@@ -24,40 +24,40 @@
 
     <h:panelGrid columns="2" cellpadding="12" style="width: 100%; font-family: serif">
 
-        <p:graphicImage value="Foto" url="galereya/drel_i_mozgi.png" alt="Add foto" style="width: 300px; border: 1px; background-color: "/>
+        <p:graphicImage value="Фото" url="galereya/drel_i_mozgi.png" alt="Add foto" style="width: 300px; border: 1px; background-color: "/>
         <p:fileUpload value="#{employeeBean.file}" mode="simple" skinSimple="true"/>
 
-        <p:outputLabel value="Last Name" for="lastName" style="font-family: serif"/>
+        <p:outputLabel value="Фамилия" for="lastName" style="font-family: serif"/>
         <p:inputText id="lastName" value="#{employee.lastName}" style="width: 100%" styleClass="input"/>
 
-        <p:outputLabel value="First Name" for="firstName" />
+        <p:outputLabel value="Имя" for="firstName" style="font-family: serif"/>
         <p:inputText id="firstName" value="#{employee.firstName}" style="width: 100%" styleClass="input"/>
 
-        <p:outputLabel value="Father Name" for="fatherName" />
+        <p:outputLabel value="Отчество" for="fatherName" style="font-family: serif"/>
         <p:inputText id="fatherName" value="#{employee.fatherName}" style="width: 100%" styleClass="input"/>
 
-        <p:outputLabel value="Position" for="position" />
+        <p:outputLabel value="Должность" for="position" style="font-family: serif"/>
         <p:inputText id="position" value="#{employee.position}" style="width: 100%" styleClass="input"/>
 
-        <p:outputLabel value="Address" for="address" />
-        <p:inputText id="address" value="#{employee.address}" style="width: 100%"/>
+        <p:outputLabel value="Адрес" for="address" style="font-family: serif"/>
+        <p:inputText id="address" value="#{employee.address}" style="width: 100%" styleClass="input"/>
 
-        <p:outputLabel value="Phone Number" for="phoneNumber" />
+        <p:outputLabel value="Телефон" for="phoneNumber" style="font-family: serif"/>
         <p:inputText id="phoneNumber" value="#{employee.phoneNumber}" mask="(999) 999-9999" style="width: 100%" styleClass="input"/>
 
-        <p:outputLabel value="E_mail" for="e_mail" />
+        <p:outputLabel value="E_mail" for="e_mail" style="font-family: serif"/>
         <p:inputText id="e_mail" value="#{employee.e_mail}" style="width: 100%" styleClass="input"/>
 
-        <p:outputLabel value="Date Admissiom" for="dateAdmissiom" />
+        <p:outputLabel value="Дата приема" for="dateAdmissiom" style="font-family: serif"/>
         <p:inputText id="dateAdmissiom" value="#{employee.dateAdmissiom}" mask="99/99/9999" style="width: 100%" styleClass="input"/>
 
-        <p:outputLabel value="Date Of Dismissal" for="dateOfDismissal" />
+        <p:outputLabel value="Дата увольнения" for="dateOfDismissal" style="font-family: serif"/>
         <p:inputText id="dateOfDismissal" value="#{employee.dateOfDismissal}" mask="99/99/9999" style="width: 100%" styleClass="input"/>
 
-        <p:outputLabel value="Login" for="login" />
+        <p:outputLabel value="Login" for="login" style="font-family: serif"/>
         <p:inputText id="login" value="#{employee.login}" style="width: 100%" styleClass="input"/>
 
-        <p:outputLabel value="Password" for="password" />
+        <p:outputLabel value="Password" for="password" style="font-family: serif"/>
         <p:inputText id="password" value="#{employee.password}" style="width: 100%" styleClass="input"/>
 
     </h:panelGrid>

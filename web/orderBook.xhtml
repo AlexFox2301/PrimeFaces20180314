@@ -40,7 +40,7 @@
             <f:view>
                 <p:dataTable var="zakaz" value="#{zakazBean.zakazes}" rendered="#{not empty zakazBean.zakazes}">
 
-                    <p:column headerText="Id" style="font-family: serif; font-size: 14px">
+                    <p:column headerText="Id" style="font-family: serif; font-size: 14px; width: 5%">
                         <h:outputText value="#{zakaz.id}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
@@ -56,11 +56,11 @@
                         <h:outputText value="#{zakaz.deadLine}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
-                    <p:column headerText="Себестоимость" style="font-family: serif; font-size: 14px">
+                    <p:column headerText="Себестоимость" style="font-family: serif; font-size: 14px; width: 7%">
                         <h:outputText value="#{zakaz.costPrice}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
-                    <p:column headerText="Стоимость" style="font-family: serif; font-size: 14px">
+                    <p:column headerText="Стоимость" style="font-family: serif; font-size: 14px; width: 7%">
                         <h:outputText value="#{zakaz.valueOrder}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
@@ -68,23 +68,23 @@
                         <h:outputText value="#{zakaz.adressOrder}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
-                    <p:column headerText="Замер" style="font-family: serif; font-size: 14px">
-                        <h:outputText value="#{zakaz.measurement}" style="font-family: serif; font-size: 14px"/>
-                    </p:column>
+                    <!--<p:column headerText="Замер" style="font-family: serif; font-size: 14px">-->
+                        <!--<h:outputText value="#{zakaz.measurement}" style="font-family: serif; font-size: 14px"/>-->
+                    <!--</p:column>-->
 
-                    <p:column headerText="Дизайн модель" style="font-family: serif; font-size: 14px">
-                        <h:outputText value="#{zakaz.designModel}" style="font-family: serif; font-size: 14px"/>
-                    </p:column>
+                    <!--<p:column headerText="Дизайн модель" style="font-family: serif; font-size: 14px">-->
+                        <!--<h:outputText value="#{zakaz.designModel}" style="font-family: serif; font-size: 14px"/>-->
+                    <!--</p:column>-->
 
-                    <p:column headerText="Технологическая документация" style="font-family: serif; font-size: 14px">
-                        <h:outputText value="#{zakaz.techDoc}" style="font-family: serif; font-size: 14px"/>
-                    </p:column>
+                    <!--<p:column headerText="Технологическая документация" style="font-family: serif; font-size: 14px">-->
+                        <!--<h:outputText value="#{zakaz.techDoc}" style="font-family: serif; font-size: 14px"/>-->
+                    <!--</p:column>-->
 
-                    <p:column headerText="Подтверждение" style="font-family: serif; font-size: 14px">
+                    <p:column headerText="Подтверждение" style="font-family: serif; font-size: 14px; width: 7%">
                         <h:outputText value="#{zakaz.confirmation}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
-                    <p:column headerText="Статус" style="font-family: serif; font-size: 14px">
+                    <p:column headerText="Статус" style="font-family: serif; font-size: 14px; width: 7%">
                         <h:outputText value="#{zakaz.state}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
@@ -96,13 +96,13 @@
                         <h:outputText value="#{zakaz.actualDateOfDelivery}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
-                    <p:column headerText="Фото" style="font-family: serif; font-size: 14px">
-                        <h:outputText value="#{zakaz.foto}" style="font-family: serif; font-size: 14px"/>
-                    </p:column>
+                    <!--<p:column headerText="Фото" style="font-family: serif; font-size: 14px">-->
+                        <!--<h:outputText value="#{zakaz.foto}" style="font-family: serif; font-size: 14px"/>-->
+                    <!--</p:column>-->
 
-                    <p:column headerText="Примечание" style="font-family: serif; font-size: 14px">
-                        <h:outputText value="#{zakaz.note}" style="font-family: serif; font-size: 14px"/>
-                    </p:column>
+                    <!--<p:column headerText="Примечание" style="font-family: serif; font-size: 14px">-->
+                        <!--<h:outputText value="#{zakaz.note}" style="font-family: serif; font-size: 14px"/>-->
+                    <!--</p:column>-->
 
                 </p:dataTable>
 
