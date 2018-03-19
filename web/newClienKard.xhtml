@@ -1,58 +1,56 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>New Clien Kard</title>
-    <link rel="icon" href="galereya/drel-drawing.png">
-    <link rel="stylesheet" href="resources/css/style.css">
-</head>
-<body class="total">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-    <header>
-        <h2 align="center">ЧП "РИО" </h2>
-        <p align="center" class="footer" width="100%">MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
-    </header>
+<h:head>
+    <title>New Client Kard</title>
+    <link rel="shortcut icon" type="image/png" href="galereya/drel-drawing.png" />
+    <h:outputStylesheet library="css" name="style.css"/>
+</h:head>
 
-    <main>
-        <form>
-            <table border="1" class="table">
-                <tr>
-                    <td width="20%">ID</td>
-                    <td><input type="text" readonly name="idClient" id="input"></td>
-                </tr>
-                <tr>
-                    <td>Фамилия</td>
-                    <td><input type="text" name="clientKastName" id="input"></td>
-                </tr>
-                <tr>
-                    <td>Имя</td>
-                    <td><input type="text" name="clientFirstName" id="input"></td>
-                </tr>
-                <tr>
-                    <td>Отчество</td>
-                    <td><input type="text" name="clientFatherName" id="input"></td>
-                </tr>
-                <tr>
-                    <td>Домашний адрес</td>
-                    <td><input type="text"  name="clientHomeAdres" id="input"></td>
-                </tr>
-                <tr>
-                    <td>Телефонный номер</td>
-                    <td><input type="tel" name="clientPhoneNumber" id="input"></td>
-                </tr>
-                <tr>
-                    <td>e-mail</td>
-                    <td><input type="email" name="clientEmail" id="input"></td>
-                </tr>
-            </table>
-            <input type="submit" class="buttomFind">
-            
-        </form>
-        <a href="client.xhtml">
-                <button class="buttomFind">Выйти</button>
-            </a>
-    </main>
+<h:body styleClass="total">
 
-    
+    <h2 align="center">ЧП "РИО" </h2>
+    <p align="center" >MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
+    <h1 align="center">Карточка Клиента</h1>
 
-</body>
+
+    <h:form>
+        <p:growl id="messages" showDetail="true" />
+
+        <h:panelGrid columns="2" cellpadding="7" style="width: 100%; font-family: serif">
+
+            <p:outputLabel value="Фамилия" for="lastName" style="font-family: serif"/>
+            <p:inputText id="lastName" value="#{client.clientLastName}" style="width: 100%" styleClass="input"/>
+
+            <p:outputLabel value="Имя" for="firstName" style="font-family: serif"/>
+            <p:inputText id="firstName" value="#{client.clientFirstName}" style="width: 100%" styleClass="input"/>
+
+            <p:outputLabel value="Отчество" for="fatherName" style="font-family: serif"/>
+            <p:inputText id="fatherName" value="#{client.clientFatherName}" style="width: 100%" styleClass="input"/>
+
+            <p:outputLabel value="Адрес" for="address" style="font-family: serif"/>
+            <p:inputText id="address" value="#{client.adressHome}" style="width: 100%" styleClass="input"/>
+
+            <p:outputLabel value="Телефон" for="phoneNumber" style="font-family: serif"/>
+            <p:inputText id="phoneNumber" value="#{client.clientPhoneNumber}" mask="(999) 999-9999" style="width: 100%" styleClass="input"/>
+
+            <p:outputLabel value="E_mail" for="e_mail" style="font-family: serif"/>
+            <p:inputText id="e_mail" value="#{cllient.e_mail}" style="width: 100%" styleClass="input"/>
+
+            <p:outputLabel value="Дата регистрации" for="dateRegistration" style="font-family: serif"/>
+            <p:inputText id="dateRegistration" value="#{client.dateRegistration}" mask="99/99/9999" style="width: 100%" styleClass="input"/>
+
+        </h:panelGrid>
+
+        <p:button value="Отправить" style="width: 200px; margin: 20px; border-radius: 10px"/>
+        <p:button value="Отмена" style="width: 200px; margin: 20px; border-radius: 10px"/>
+
+    </h:form>
+</h:body>
 </html>
