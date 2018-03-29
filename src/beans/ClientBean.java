@@ -35,6 +35,14 @@ public class ClientBean {
 
 ///////////////Методы//////////////////////////////////////////////////
 
+//    public void createClient (){
+//        Client client;
+//        client.setClientLastName();
+//        client.setClientFirstName();
+//        client.setClientFatherName();
+//
+//    }
+
     public void search(){}//липовая заглушка
 
     public void deleted(){}//липовая заглушка

@@ -10,6 +10,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 @Named
@@ -31,8 +32,11 @@ public class UserBean implements Serializable{
     private boolean createSuccess;
 
     private String searchText;
+    private String sub;
 
     private UploadedFile file;
+
+    private User user;
 
     /////////////Геттеры / Сеттеры /////////////////////////////////////////
 
@@ -86,6 +90,41 @@ public class UserBean implements Serializable{
     }
 
     ///////////////Методы//////////////////////////////////////////////////
+
+    public User createUser(){
+
+        String lastName = "";
+        String firstName = "";
+        String fatherName = "";
+        String position = "";
+        String address = "";
+        String phoneNumber = "";
+        String e_mail = "";
+        String login = "";
+        String password = "";
+        Date dateAdmissiom = null;
+        Date dateOfDismissal = null;
+
+        User user = new User();
+        user.setLastName(lastName);
+        user.setFirstName(firstName);
+        user.setFatherName(fatherName);
+        user.setPosition(position);
+        user.setAddress(address);
+        user.setPhoneNumber(phoneNumber);
+        user.setE_mail(e_mail);
+        user.setLogin(login);
+        user.setPassword(password);
+        user.setDateAdmissiom(dateAdmissiom);
+        user.setDateOfDismissal(dateOfDismissal);
+
+        return user;
+    }
+
+    public void addUser(User user){
+        userDAO.addUser(user);
+        user = null;
+    }
 
     public void checkPassword(){
         loginSuccess = userDAO.checkPassword(login, password);

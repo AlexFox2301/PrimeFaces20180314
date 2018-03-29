@@ -82,8 +82,8 @@
 .input{
     
     width: 99%;
-    padding: 2px;
-    margin: 5px;
+    /*padding: 2px;*/
+    /*margin: 5px;*/
     border-color: grey;
 /*    background-color: lightgray;*/
     border-radius: 10px;
@@ -123,9 +123,3 @@
 .image{
     height: 220px;
 }
-
-/**, *:after, *:before {*/
-  /*-webkit-box-sizing: border-box;*/
-  /*-moz-box-sizing: border-box;*/
-  /*box-sizing: border-box;*/
-/*}*/

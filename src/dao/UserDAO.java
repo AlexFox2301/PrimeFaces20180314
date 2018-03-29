@@ -43,6 +43,10 @@ public class UserDAO {
 
     }
 
+    public void addUser(User user){
+        em.persist(user);
+    }
+
     public void addMessage(String summary) {
         FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary,  null);
         FacesContext.getCurrentInstance().addMessage(null, message);

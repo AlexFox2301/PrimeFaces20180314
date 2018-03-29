@@ -96,21 +96,6 @@ public class Client {
         this.dateRegistration = dateRegistration;
     }
 
-    ////////////////////////Методы///////////////////////////////////////////////
-
-
-    @Override
-    public String toString() {
-        String lff = clientLastName + " " + clientFirstName + " " + clientFatherName;
-        return lff; //"Client{" +
-//                "clientLastName='" + clientLastName + '\'' +
-//                ", clientFirstName='" + clientFirstName + '\'' +
-//                ", clientFatherName='" + clientFatherName + '\'' +
-//                '}';
-    }
-
-
-
     public Collection<Zakaz> getZakazes() {
         return zakazes;
     }
@@ -118,4 +103,15 @@ public class Client {
     public void setZakazes(Collection<Zakaz> zakaz) {
         this.zakazes = zakaz;
     }
+    ////////////////////////Методы///////////////////////////////////////////////
+
+
+    @Override
+    public String toString() {
+        String lff = clientLastName + " " + clientFirstName + " " + clientFatherName;
+        return lff;
+    }
+
+
+
 }
