@@ -26,7 +26,7 @@
 <p:layout style="background-color: darkgray">
 
 <p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" styleClass="col_left" >
-    <p:button value="Добавить" href="newEmployeeKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+    <p:button value="Добавить" onclick="window.open('newEmployeeKard.xhtml', 'description', 'width=1200, height=900, top=50, left=50, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
     <p:button value="Редактировать" href="newEmployeeKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
     <p:commandButton value="Удалить" actionListener="#{userBean.deleted}" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
     <p:button value="Меню" href="home.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>

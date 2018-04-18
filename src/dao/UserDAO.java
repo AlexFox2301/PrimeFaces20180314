@@ -16,7 +16,7 @@ public class UserDAO {
     @PersistenceContext
     EntityManager em;
 
-    //unchecked/
+
     public List<User> findAll(){
         return em.createQuery("select u from User u").getResultList();
     }
@@ -43,8 +43,15 @@ public class UserDAO {
 
     }
 
-    public void addUser(User user){
-        em.persist(user);
+    public User addUser(User userFromDB){
+
+//        em.getTransaction().begin();
+//        User userFromDB = em.merge(user);
+//        em.getTransaction().commit();
+//        return userFromDB;
+
+//        em.persist(userFromDB);
+        return em.merge(userFromDB);
     }
 
     public void addMessage(String summary) {
