@@ -25,8 +25,20 @@ public class UserBean implements Serializable{
 
     /////////////Переменные/////////////////////////////////////////////////
 
+    private String foto;
+    private String lastName;
+    private String firstName;
+    private String fatherName;
+    private String position;
+    private String address;
+    private String phoneNumber;
+    private String e_mail;
     private String login;
     private String password;
+    private Date dateAdmissiom;
+    private Date dateOfDismissal;
+
+
 
     private boolean loginSuccess;
     private boolean createSuccess;
@@ -40,6 +52,102 @@ public class UserBean implements Serializable{
 
     /////////////Геттеры / Сеттеры /////////////////////////////////////////
 
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getFatherName() {
+        return fatherName;
+    }
+
+    public void setFatherName(String fatherName) {
+        this.fatherName = fatherName;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getE_mail() {
+        return e_mail;
+    }
+
+    public void setE_mail(String e_mail) {
+        this.e_mail = e_mail;
+    }
+
+    public Date getDateAdmissiom() {
+        return dateAdmissiom;
+    }
+
+    public void setDateAdmissiom(Date dateAdmissiom) {
+        this.dateAdmissiom = dateAdmissiom;
+    }
+
+    public Date getDateOfDismissal() {
+        return dateOfDismissal;
+    }
+
+    public void setDateOfDismissal(Date dateOfDismissal) {
+        this.dateOfDismissal = dateOfDismissal;
+    }
+
+    public String getSub() {
+        return sub;
+    }
+
+    public void setSub(String sub) {
+        this.sub = sub;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public String getLogin() {
         return login;
@@ -91,41 +199,24 @@ public class UserBean implements Serializable{
 
     ///////////////Методы//////////////////////////////////////////////////
 
-//    public User createUser(){
-    public void createUser(User userFromDB){
+    public void createUser(){
 
-//        String lastName = "";
-//        String firstName = "";
-//        String fatherName = "";
-//        String position = "";
-//        String address = "";
-//        String phoneNumber = "";
-//        String e_mail = "";
-//        String login = "";
-//        String password = "";
-//        Date dateAdmissiom = null;
-//        Date dateOfDismissal = null;
+        User userFromDB = new User();
+        userFromDB.setLastName(lastName);
+        userFromDB.setFirstName(firstName);
+        userFromDB.setFatherName(fatherName);
+        userFromDB.setPosition(position);
+        userFromDB.setAddress(address);
+        userFromDB.setPhoneNumber(phoneNumber);
+        userFromDB.setE_mail(e_mail);
+        userFromDB.setLogin(login);
+        userFromDB.setPassword(password);
+        userFromDB.setDateAdmissiom(dateAdmissiom);
+        userFromDB.setDateOfDismissal(dateOfDismissal);
 
-//        User user = new User();
-//        userFromDB.setLastName();
-//        userFromDB.setFirstName(firstName);
-//        userFromDB.setFatherName(fatherName);
-//        userFromDB.setPosition(position);
-//        userFromDB.setAddress(address);
-//        userFromDB.setPhoneNumber(phoneNumber);
-//        userFromDB.setE_mail(e_mail);
-//        userFromDB.setLogin(login);
-//        userFromDB.setPassword(password);
-//        userFromDB.setDateAdmissiom(dateAdmissiom);
-//        userFromDB.setDateOfDismissal(dateOfDismissal);
-
-        userDAO.addUser(userFromDB);
-
+        createSuccess = userDAO.addUser(userFromDB);
     }
 
-//    public void add(User user){
-//        userDAO.addUser(user);
-//    }
 
     public void checkPassword(){
         loginSuccess = userDAO.checkPassword(login, password);

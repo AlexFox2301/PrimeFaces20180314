@@ -10,6 +10,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
+import static javax.faces.component.UIInput.isEmpty;
+
 @Stateless
 public class UserDAO {
 
@@ -43,15 +45,10 @@ public class UserDAO {
 
     }
 
-    public User addUser(User userFromDB){
+    public boolean addUser(User userEntity){
 
-//        em.getTransaction().begin();
-//        User userFromDB = em.merge(user);
-//        em.getTransaction().commit();
-//        return userFromDB;
-
-//        em.persist(userFromDB);
-        return em.merge(userFromDB);
+        em.persist(userEntity);
+        return true;
     }
 
     public void addMessage(String summary) {

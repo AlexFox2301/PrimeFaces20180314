@@ -25,7 +25,7 @@
         <p:layout style="background-color: darkgray">
 
             <p:layoutUnit position="west" resizable="true" maxSize="200" minSize="50" styleClass="col_left">
-                <p:commandButton value="Сохранить" action="#{userBean.createUser(user)}" onclick="window.close()" update="growl" style="width: 80%; margin: 10%; border-radius: 10px"/>
+                <p:commandButton value="Сохранить" action="#{userBean.createUser()}" onclick="window.close()" update="growl" style="width: 80%; margin: 10%; border-radius: 10px"/>
                 <p:button value="Отмена" href="employee.xhtml" style="width: 80%; margin: 10%; border-radius: 10px"/>
             </p:layoutUnit>
 
@@ -37,37 +37,37 @@
                     <p:fileUpload value="#{userBean.file}" mode="simple" skinSimple="true"/>
 
                     <p:outputLabel value="Фамилия" for="lastName" style="font-family: serif"/>
-                    <p:inputText id="lastName" value="#{user.setLastName()}" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="lastName" value="#{userBean.lastName}" style="width: 100%" styleClass="input"/>
 
                     <p:outputLabel value="Имя" for="firstName" style="font-family: serif"/>
-                    <p:inputText id="firstName" value="#{user.setFirstName}" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="firstName" value="#{userBean.firstName}" style="width: 100%" styleClass="input"/>
 
                     <p:outputLabel value="Отчество" for="fatherName" style="font-family: serif"/>
-                    <p:inputText id="fatherName" value="#{user.fatherName}" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="fatherName" value="#{userBean.fatherName}" style="width: 100%" styleClass="input"/>
 
                     <p:outputLabel value="Должность" for="position" style="font-family: serif"/>
-                    <p:inputText id="position" value="#{user.position}" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="position" value="#{userBean.position}" style="width: 100%" styleClass="input"/>
 
                     <p:outputLabel value="Адрес" for="address" style="font-family: serif"/>
-                    <p:inputText id="address" value="#{user.address}" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="address" value="#{userBean.address}" style="width: 100%" styleClass="input"/>
 
                     <p:outputLabel value="Телефон" for="phoneNumber" style="font-family: serif"/>
-                    <p:inputText id="phoneNumber" value="#{user.phoneNumber}" mask="(999) 999-9999" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="phoneNumber" value="#{userBean.phoneNumber}" mask="(999) 999-9999" style="width: 100%" styleClass="input"/>
 
                     <p:outputLabel value="E_mail" for="e_mail" style="font-family: serif"/>
-                    <p:inputText id="e_mail" value="#{user.e_mail}" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="e_mail" value="#{userBean.e_mail}" style="width: 100%" styleClass="input"/>
 
                     <p:outputLabel value="Дата приема" for="dateAdmissiom" style="font-family: serif"/>
-                    <p:inputText id="dateAdmissiom" value="#{user.dateAdmissiom}" mask="99/99/9999" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="dateAdmissiom" value="#{userBean.dateAdmissiom}" mask="99/99/9999" style="width: 100%" styleClass="input"/>
 
                     <p:outputLabel value="Дата увольнения" for="dateOfDismissal" style="font-family: serif"/>
-                    <p:inputText id="dateOfDismissal" value="#{user.dateOfDismissal}" mask="99/99/9999" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="dateOfDismissal" value="#{userBean.dateOfDismissal}" mask="99/99/9999" style="width: 100%" styleClass="input"/>
 
                     <p:outputLabel value="Login" for="login" style="font-family: serif"/>
-                    <p:inputText id="login" value="#{user.login}" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="login" value="#{userBean.login}" style="width: 100%" styleClass="input"/>
 
                     <p:outputLabel value="Password" for="password" style="font-family: serif"/>
-                    <p:inputText id="password" value="#{user.password}" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="password" value="#{userBean.password}" style="width: 100%" styleClass="input"/>
 
                 </h:panelGrid>
             </p:layoutUnit>
