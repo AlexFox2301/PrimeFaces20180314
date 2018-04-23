@@ -214,7 +214,7 @@ public class UserBean implements Serializable{
         userFromDB.setDateAdmissiom(dateAdmissiom);
         userFromDB.setDateOfDismissal(dateOfDismissal);
 
-        createSuccess = userDAO.addUser(userFromDB);
+        userDAO.addUser(userFromDB);//();
     }
 
 

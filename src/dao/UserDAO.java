@@ -8,9 +8,8 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.Date;
 import java.util.List;
-
-import static javax.faces.component.UIInput.isEmpty;
 
 @Stateless
 public class UserDAO {
@@ -47,7 +46,7 @@ public class UserDAO {
 
     public boolean addUser(User userEntity){
 
-        em.persist(userEntity);
+        em.merge(userEntity);
         return true;
     }
 
