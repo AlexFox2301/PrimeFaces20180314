@@ -1,6 +1,8 @@
 package dao;
 
 import com.mysql.jdbc.StringUtils;
+import jdk.nashorn.internal.objects.annotations.Getter;
+import jdk.nashorn.internal.objects.annotations.Setter;
 import tables.User;
 
 import javax.ejb.Stateless;
@@ -17,6 +19,14 @@ public class UserDAO {
     @PersistenceContext
     EntityManager em;
 
+
+    /////////////Конструкторы/////////////////////////////////////////
+
+    public UserDAO() {
+    }
+
+
+    /////////////Методы/////////////////////////////////////////
 
     public List<User> findAll(){
         return em.createQuery("select u from User u").getResultList();
@@ -46,8 +56,15 @@ public class UserDAO {
 
     public boolean addUser(User userEntity){
 
-        em.merge(userEntity);
+        em.persist(userEntity);
+        addMessage("Запись добавлена в Базу данных");
         return true;
+    }
+
+    public void deleteUser(int id){
+
+        em.remove(em.find(User.class, id));
+        addMessage("Запись удалена из базы данных");
     }
 
     public void addMessage(String summary) {

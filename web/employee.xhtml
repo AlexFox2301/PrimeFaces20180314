@@ -19,6 +19,8 @@
 <p align="center" >MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
 <h1 align="center">Сотрудники</h1>
 
+    <p:growl id="growl" life="2000"/>
+
 <p:inputText value="#{userBean.searchText}" placeholder="Поиск" style="width: 400px; margin: 5px; border-radius: 7px; font-family: serif; font-size: 16px"/>
 <p:commandButton value="Поиск" actionListener="#{userBean.search}" style="width: 150px; margin: 5px; font-family: serif; font-size: 16px"/>
 <br/>
@@ -26,9 +28,9 @@
 <p:layout style="background-color: darkgray">
 
 <p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" styleClass="col_left" >
-    <p:button value="Добавить" onclick="window.open('newEmployeeKard.xhtml', 'description', 'width=1200, height=900, top=200, left=50, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+    <p:button value="Добавить" onclick="window.open('newEmployeeKard.xhtml', 'description', 'width=1200, height=900, top=200, left=300, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
     <p:button value="Редактировать" href="newEmployeeKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-    <p:commandButton value="Удалить" actionListener="#{userBean.deleted}" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+    <p:commandButton value="Удалить" onclick="window.open('deleteUser.xhtml', 'description', 'width=500, height=500, top=200, left=500, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
     <p:button value="Меню" href="home.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
     <p:button value="Выход" href="index.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
 </p:layoutUnit>
@@ -43,9 +45,9 @@
          <h:outputText value="#{user.id}" style="font-family: serif; font-size: 16px"/>
       </p:column>
 
-       <p:column headerText="Фото" style="font-family: serif; font-size: 14px">
-           <h:outputText value="#{user.foto}" style="font-family: serif; font-size: 14px"/>
-       </p:column>
+       <!--<p:column headerText="Фото" style="font-family: serif; font-size: 14px">-->
+           <!--<h:outputText value="#{user.foto}" style="font-family: serif; font-size: 14px"/>-->
+       <!--</p:column>-->
 
        <p:column headerText="Фамилия" style="font-family: serif; font-size: 14px">
          <h:outputText value="#{user.lastName}" style="font-family: serif; font-size: 14px"/>

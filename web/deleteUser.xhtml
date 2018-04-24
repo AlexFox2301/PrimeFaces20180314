@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Delete User</title>
+    <link rel="shortcut icon" type="image/png" href="galereya/drel-drawing.png" />
+    <h:outputStylesheet library="css" name="style.css"/>
+</h:head>
+
+<h:body styleClass="total">
+
+    <h2 align="center">ЧП "РИО" </h2>
+    <p align="center" >MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
+    <h1 align="center">Удаление сотрудника из БД</h1>
+
+    <h:form>
+        <p:growl id="growl" life="2000"/>
+
+        <p:outputLabel value="Ввести id сотрудника для удаления" for="id" style="font-family: serif"/>
+
+        <br/>
+
+        <p:inputText id="id" value="#{userBean.id}" styleClass="input"/>
+
+        <br/>
+
+        <p:commandButton value="Удалить" action="#{userBean.deleted(userBean.id)}" onclick="window.close()" update="growl" style="width: 80%; margin: 10%; border-radius: 10px"/>
+
+    </h:form>
+</h:body>
+</html>

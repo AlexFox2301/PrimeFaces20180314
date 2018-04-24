@@ -25,7 +25,8 @@ public class UserBean implements Serializable{
 
     /////////////Переменные/////////////////////////////////////////////////
 
-    private String foto;
+    int id;
+//    private String foto;
     private String lastName;
     private String firstName;
     private String fatherName;
@@ -38,8 +39,6 @@ public class UserBean implements Serializable{
     private Date dateAdmissiom;
     private Date dateOfDismissal;
 
-
-
     private boolean loginSuccess;
     private boolean createSuccess;
 
@@ -50,16 +49,30 @@ public class UserBean implements Serializable{
 
     private User user = new User();
 
+    /////////////Конструкторы/////////////////////////////////////////
+
+    public UserBean() {
+    }
+
+
     /////////////Геттеры / Сеттеры /////////////////////////////////////////
 
-
-    public String getFoto() {
-        return foto;
+    public int getId() {
+        return id;
     }
 
-    public void setFoto(String foto) {
-        this.foto = foto;
+    public void setId(int id) {
+        this.id = id;
     }
+
+
+//    public String getFoto() {
+//        return foto;
+//    }
+//
+//    public void setFoto(String foto) {
+//        this.foto = foto;
+//    }
 
     public String getLastName() {
         return lastName;
@@ -224,7 +237,11 @@ public class UserBean implements Serializable{
 
     public void search(){}//липовая заглушка
 
-    public void deleted(){}//липовая заглушка
+    public void deleted(int id){
+
+        userDAO.deleteUser(id);
+
+    }//липовая заглушка
 
     public void upload() {
         if(file != null) {

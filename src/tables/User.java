@@ -40,6 +40,12 @@ public class User {
     @OneToMany(mappedBy = "employee")//, fetch = FetchType.EAGER
     private Collection<Zakaz> zakazes;
 
+    /////////////Конструкторы/////////////////////////////////////////
+
+    public User() {
+    }
+
+    /////////////Геттеры / Сеттеры /////////////////////////////////////////
 
     public String getFoto() {
         return foto;
