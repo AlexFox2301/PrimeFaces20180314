@@ -25,8 +25,8 @@
         <p:layout style="background-color: darkgray">
 
             <p:layoutUnit position="west" resizable="true" maxSize="200" minSize="50" styleClass="col_left">
-                <p:commandButton value="Сохранить" action="#{userBean.createUser()}" onclick="window.close()" update="growl" style="width: 80%; margin: 10%; border-radius: 10px"/>
-                <p:button value="Отмена" href="employee.xhtml" style="width: 80%; margin: 10%; border-radius: 10px"/>
+                <p:commandButton value="Сохранить" id="saveToDB" actionListener="#{userBean.createUser()}" onclick="window.close()" update="growl" style="width: 80%; margin: 10%; border-radius: 10px"/>
+                <p:button value="Отмена" id="cansel" href="employee.xhtml" style="width: 80%; margin: 10%; border-radius: 10px"/>
             </p:layoutUnit>
 
             <p:layoutUnit position="center">
@@ -43,7 +43,17 @@
                     <p:inputText id="fatherName" value="#{userBean.fatherName}" style="width: 100%" styleClass="input"/>
 
                     <p:outputLabel value="Должность" for="position" style="font-family: serif"/>
-                    <p:inputText id="position" value="#{userBean.position}" style="width: 100%" styleClass="input"/>
+                    <p:selectOneMenu id="position" value="#{userBean.position}" style="width:125px">
+                        <f:selectItem itemLabel="Select One" itemValue="" />
+                        <f:selectItem itemLabel="Директор" itemValue="Директор" />
+                        <f:selectItem itemLabel="Технолог" itemValue="Технолог" />
+                        <f:selectItem itemLabel="Дизайнер" itemValue="Дизайнер" />
+                        <f:selectItem itemLabel="Агент снабжения" itemValue="Агент снабжения" />
+                        <f:selectItem itemLabel="Сборщик" itemValue="Сборщик" />
+                        <f:selectItem itemLabel="Водитель" itemValue="Водитель" />
+                        <f:selectItem itemLabel="Помощник сборщика" itemValue="Помощник сборщика" />
+                    </p:selectOneMenu>
+
 
                     <p:outputLabel value="Адрес" for="address" style="font-family: serif"/>
                     <p:inputText id="address" value="#{userBean.address}" style="width: 100%" styleClass="input"/>

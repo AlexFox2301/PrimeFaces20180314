@@ -6,6 +6,7 @@ import tables.User;
 
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
@@ -15,6 +16,7 @@ import java.util.List;
 
 @Named
 @SessionScoped
+@ManagedBean
 public class UserBean implements Serializable{
     @EJB
     UserDAO userDAO;
@@ -25,7 +27,8 @@ public class UserBean implements Serializable{
 
     /////////////Переменные/////////////////////////////////////////////////
 
-    int id;
+//    private String idStr;
+    int idInp;
 //    private String foto;
     private String lastName;
     private String firstName;
@@ -57,12 +60,21 @@ public class UserBean implements Serializable{
 
     /////////////Геттеры / Сеттеры /////////////////////////////////////////
 
-    public int getId() {
-        return id;
+
+//    public String getIdStr() {
+//        return idStr;
+//    }
+//
+//    public void setIdStr(String idStr) {
+//        this.idStr = idStr;
+//    }
+
+    public int getIdInp() {
+        return idInp;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdInp(int idInp) {
+        this.idInp = idInp;
     }
 
 
@@ -237,9 +249,9 @@ public class UserBean implements Serializable{
 
     public void search(){}//липовая заглушка
 
-    public void deleted(int id){
+    public void deleted(){
 
-        userDAO.deleteUser(id);
+        userDAO.deleteUser(idInp);
 
     }//липовая заглушка
 

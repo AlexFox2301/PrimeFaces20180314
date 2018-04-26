@@ -63,7 +63,10 @@ public class UserDAO {
 
     public void deleteUser(int id){
 
-        em.remove(em.find(User.class, id));
+        User delUs = em.find(User.class, id);
+
+        em.remove(delUs);
+
         addMessage("Запись удалена из базы данных");
     }
 

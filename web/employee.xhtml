@@ -28,11 +28,11 @@
 <p:layout style="background-color: darkgray">
 
 <p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" styleClass="col_left" >
-    <p:button value="Добавить" onclick="window.open('newEmployeeKard.xhtml', 'description', 'width=1200, height=900, top=200, left=300, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-    <p:button value="Редактировать" href="newEmployeeKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-    <p:commandButton value="Удалить" onclick="window.open('deleteUser.xhtml', 'description', 'width=500, height=500, top=200, left=500, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-    <p:button value="Меню" href="home.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-    <p:button value="Выход" href="index.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+    <p:button value="Добавить" id="addUser" onclick="window.open('newEmployeeKard.xhtml', 'description', 'width=1200, height=900, top=200, left=300, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+    <p:button value="Редактировать" id="editUser" href="newEmployeeKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+    <p:commandButton value="Удалить" id="delete" onclick="window.open('deleteUser.xhtml', 'description', 'width=500, height=500, top=200, left=500, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+    <p:button value="Меню" id="menu" href="home.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+    <p:button value="Выход" id="exit" href="index.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
 </p:layoutUnit>
 
 
@@ -100,11 +100,11 @@
 
 
     <p:layoutUnit position="east" resizable="true" maxSize="120" minSize="50" styleClass="col_left">
-        <p:button value="Заказы" href="orderBook.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-        <p:button value="Клиенты" href="client.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-        <p:button value="Склад" href="stock.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-        <p:button value="Поставщики" href="vendor.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-        <p:button value="Галерея" href="galereya.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+        <p:button value="Заказы" id="orders" href="orderBook.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+        <p:button value="Клиенты" id="clients" href="client.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+        <p:button value="Склад" id="stock" href="stock.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+        <p:button value="Поставщики" id="vendors" href="vendor.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+        <p:button value="Галерея" id="fotos" href="galereya.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
     </p:layoutUnit>
 
 </p:layout>
