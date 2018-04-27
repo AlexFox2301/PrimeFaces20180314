@@ -113,7 +113,7 @@
     </p:layout>
 
     <p:contextMenu for="users">
-        <p:menuitem value="View" update="userDetail" icon="ui-icon-search" oncomplete="PF('carDialog').show()"/>
+        <!--<p:menuitem value="View" update="userDetail" icon="ui-icon-search" oncomplete="PF('carDialog').show()"/>-->
         <p:menuitem value="Edit" update="users" icon="ui-icon-close" actionListener="#{userBean.editUser()}"/>
         <p:menuitem value="Delete" update="users" icon="ui-icon-close" actionListener="#{userBean.delete()}"/>
     </p:contextMenu>

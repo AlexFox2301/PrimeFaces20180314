@@ -13,7 +13,7 @@
     <!--<h:outputStylesheet library="css" name="style.css"/>-->
 </h:head>
 
-<h:body style="background-color: darkgray">
+<h:body style="background-color: darkgray; height: 500px">
 
 <h2 align="center">ЧП "РИО" </h2>
 <p align="center" >MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
@@ -25,9 +25,9 @@
 <p:commandButton value="Поиск" actionListener="#{userBean.search}" style="width: 150px; margin: 5px; font-family: serif; font-size: 16px"/>
 <br/>
 
-<p:layout style="background-color: darkgray">
+<p:layout style="background-color: darkgray; height: 700px">
 
-<p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" styleClass="col_left" >
+<p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" height="500" styleClass="col_left" >
     <p:button value="Добавить" id="addUser" onclick="window.open('newEmployeeKard.xhtml', 'description', 'width=1200, height=900, top=200, left=300, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
     <p:button value="Редактировать" id="editUser" href="newEmployeeKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
     <p:commandButton value="Удалить" id="delete" onclick="window.open('deleteUser.xhtml', 'description', 'width=500, height=500, top=200, left=500, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
@@ -39,7 +39,7 @@
 <p:layoutUnit position="center">
 
 <f:view>
-   <p:dataTable var="user" value="#{userBean.users}" rendered="#{not empty userBean.users}">
+   <p:dataTable var="user" value="#{userBean.users}" rendered="#{not empty userBean.users}" scrollable="true" scrollHeight="650">
 
       <p:column headerText="Id" style="font-family: serif; font-size: 14px; width: 5%">
          <h:outputText value="#{user.id}" style="font-family: serif; font-size: 16px"/>
