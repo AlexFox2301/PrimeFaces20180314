@@ -16,7 +16,7 @@ import java.util.List;
 
 @Named
 @SessionScoped
-@ManagedBean
+//@ManagedBean
 public class UserBean implements Serializable{
     @EJB
     UserDAO userDAO;
@@ -50,12 +50,12 @@ public class UserBean implements Serializable{
 
     private UploadedFile file;
 
-    private User user = new User();
+    private User selectedUser;
 
     /////////////Конструкторы/////////////////////////////////////////
 
-    public UserBean() {
-    }
+//    public UserBean() {
+//    }
 
 
     /////////////Геттеры / Сеттеры /////////////////////////////////////////
@@ -166,13 +166,13 @@ public class UserBean implements Serializable{
         this.sub = sub;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 
     public String getLogin() {
         return login;
@@ -222,6 +222,14 @@ public class UserBean implements Serializable{
         this.file = file;
     }
 
+    public User getSelectedUser() {
+        return selectedUser;
+    }
+
+    public void setSelectedUser(User selectedUser) {
+        this.selectedUser = selectedUser;
+    }
+
     ///////////////Методы//////////////////////////////////////////////////
 
     public void createUser(){
@@ -240,7 +248,7 @@ public class UserBean implements Serializable{
         userFromDB.setDateOfDismissal(dateOfDismissal);
 
         userDAO.addUser(userFromDB);//();
-    }
+    } ////НЕРАБОТАЕТ
 
 
     public void checkPassword(){
@@ -253,7 +261,7 @@ public class UserBean implements Serializable{
 
         userDAO.deleteUser(idInp);
 
-    }//липовая заглушка
+    }//НЕРАБОТАЕТ
 
     public void upload() {
         if(file != null) {

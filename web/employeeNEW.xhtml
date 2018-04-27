@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://primefaces.org/ui ">
+
+<h:head>
+    <title>Employee_Base</title>
+    <link rel="shortcut icon" type="image/png" href="galereya/drel-drawing.png" />
+    <!--<h:outputStylesheet library="css" name="style.css"/>-->
+</h:head>
+
+<h:body style="background-color: darkgray">
+
+    <h2 align="center">ЧП "РИО" </h2>
+    <p align="center" >MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
+    <h1 align="center">Сотрудники</h1>
+
+<!--<h:form id="form">-->
+
+    <p:growl id="growl" life="2000"/>
+
+    <p:inputText value="#{userBean.searchText}" placeholder="Поиск" style="width: 400px; margin: 5px; border-radius: 7px; font-family: serif; font-size: 16px"/>
+    <p:commandButton value="Поиск" actionListener="#{userBean.search}" style="width: 150px; margin: 5px; font-family: serif; font-size: 16px"/>
+    <br/>
+
+    <p:layout style="background-color: darkgray">
+
+        <p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" styleClass="col_left" >
+            <p:button value="Добавить" id="addUser" onclick="window.open('newEmployeeKard.xhtml', 'description', 'width=1200, height=900, top=200, left=300, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Редактировать" id="editUser" href="newEmployeeKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:commandButton value="Удалить" id="delete" onclick="window.open('deleteUser.xhtml', 'description', 'width=500, height=500, top=200, left=500, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Меню" id="menu" href="home.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Выход" id="exit" href="index.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+        </p:layoutUnit>
+
+
+        <p:layoutUnit position="center">
+
+            <!--<f:view>-->
+                <p:dataTable id="users" var="user" value="#{userBean.users}" scrollable="true" scrollHeight="300" rowKey="#{user.id}"  selectionMode="single">
+
+                    <p:column headerText="Id" style="font-family: serif; font-size: 14px; width: 5%">
+                        <h:outputText value="#{user.id}" style="font-family: serif; font-size: 16px"/>
+                    </p:column>
+
+                    <!--<p:column headerText="Фото" style="font-family: serif; font-size: 14px">-->
+                    <!--<h:outputText value="#{user.foto}" style="font-family: serif; font-size: 14px"/>-->
+                    <!--</p:column>-->
+
+                    <p:column headerText="Фамилия" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{user.lastName}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                    <p:column headerText="Имя" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{user.firstName}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                    <p:column headerText="Отчество" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{user.fatherName}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                    <p:column headerText="Должность" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{user.position}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                    <p:column headerText="Адрес" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{user.address}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                    <p:column headerText="Телефон" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{user.phoneNumber}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                    <p:column headerText="E-mail" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{user.e_mail}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                    <!--<p:column headerText="Логин" style="font-family: serif; font-size: 14px">-->
+                    <!--<h:outputText value="#{user.login}" style="font-family: serif; font-size: 14px"/>-->
+                    <!--</p:column>-->
+
+                    <!--<p:column headerText="Пароль" style="font-family: serif; font-size: 14px">-->
+                    <!--<h:outputText value="#{user.password}" style="font-family: serif; font-size: 14px"/>-->
+                    <!--</p:column>-->
+
+                    <p:column headerText="Дата приема" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{user.dateAdmissiom}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                    <p:column headerText="Дата увольнения" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{user.dateOfDismissal}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                </p:dataTable>
+
+            <!--</f:view>-->
+
+        </p:layoutUnit>
+
+
+        <p:layoutUnit position="east" resizable="true" maxSize="120" minSize="50" styleClass="col_left">
+            <p:button value="Заказы" id="orders" href="orderBook.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Клиенты" id="clients" href="client.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Склад" id="stock" href="stock.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Поставщики" id="vendors" href="vendor.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Галерея" id="fotos" href="galereya.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+        </p:layoutUnit>
+
+    </p:layout>
+
+    <p:contextMenu for="users">
+        <p:menuitem value="View" update="userDetail" icon="ui-icon-search" oncomplete="PF('carDialog').show()"/>
+        <p:menuitem value="Edit" update="users" icon="ui-icon-close" actionListener="#{userBean.editUser()}"/>
+        <p:menuitem value="Delete" update="users" icon="ui-icon-close" actionListener="#{userBean.delete()}"/>
+    </p:contextMenu>
+
+
+    <!--<p:dialog header="User Info" widgetVar="userDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">-->
+        <!--<p:outputPanel id="userDetail" style="text-align:center;">-->
+            <!--<p:panelGrid  columns="2" rendered="#{not empty userBean.selectedUser}" columnClasses="label,value">-->
+                <!--<f:facet name="header">-->
+                    <!--<p:graphicImage name="galereya/user/#{userBean.selectedUser.foto}-big.gif"/>-->
+                <!--</f:facet>-->
+
+                <!--<h:outputText value="Id:" />-->
+                <!--<h:outputText value="#{userBean.selectedUser.id}" />-->
+
+                <!--<h:outputText value="Last Name:" />-->
+                <!--<h:outputText value="#{userBean.selectedUser.lastName}" />-->
+
+                <!--<h:outputText value="First Name:" />-->
+                <!--<h:outputText value="#{userBean.selectedUser.firstName}"/>-->
+
+                <!--<h:outputText value="FatherName:" />-->
+                <!--<h:outputText value="$#{userBean.selectedUser.fatherName}" />-->
+            <!--</p:panelGrid>-->
+        <!--</p:outputPanel>-->
+    <!--</p:dialog>-->
+<!--</h:form>-->
+</h:body>
+</html>
