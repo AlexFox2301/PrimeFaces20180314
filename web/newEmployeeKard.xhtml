@@ -26,7 +26,7 @@
 
             <p:layoutUnit position="west" resizable="true" maxSize="200" minSize="50" styleClass="col_left">
                 <p:commandButton value="Сохранить" id="saveToDB" actionListener="#{userBean.createUser()}" onclick="window.close()" update="growl" style="width: 80%; margin: 10%; border-radius: 10px"/>
-                <p:button value="Отмена" id="cansel" href="employee.xhtml" style="width: 80%; margin: 10%; border-radius: 10px"/>
+                <p:button value="Отмена" id="cansel" onclick="window.close()" style="width: 80%; margin: 10%; border-radius: 10px"/>
             </p:layoutUnit>
 
             <p:layoutUnit position="center">
@@ -65,11 +65,10 @@
                     <p:inputText id="e_mail" value="#{userBean.e_mail}" style="width: 100%" styleClass="input"/>
 
                     <p:outputLabel value="Дата приема" for="dateAdmissiom" style="font-family: serif"/>
-                    <!--<p:inputText id="dateAdmissiom" value="#{userBean.dateAdmissiom}" mask="99/99/9999" style="width: 100%" styleClass="input"/>-->
-                    <p:calendar id="dateAdmissiom" value="#{userBean.dateAdmissiom}" mode="inline" mask="99/99/9999" style="width: 100%" styleClass="input"/>
+                    <p:calendar id="dateAdmissiom" value="#{userBean.dateAdmissiom}" locale="de" navigator="true" pattern="yyyy-MMM-dd" style="width: 100%" styleClass="input"/>
 
                     <p:outputLabel value="Дата увольнения" for="dateOfDismissal" style="font-family: serif"/>
-                    <p:inputText id="dateOfDismissal" value="#{userBean.dateOfDismissal}" mask="99/99/9999" style="width: 100%" styleClass="input"/>
+                    <p:calendar id="dateOfDismissal" value="#{userBean.dateOfDismissal}" locale="de" navigator="true" pattern="yyyy-MMM-dd" style="width: 100%" styleClass="input"/>
 
                     <p:outputLabel value="Login" for="login" style="font-family: serif"/>
                     <p:inputText id="login" value="#{userBean.login}" style="width: 100%" styleClass="input"/>

@@ -27,7 +27,6 @@ public class UserBean implements Serializable{
 
     /////////////Переменные/////////////////////////////////////////////////
 
-//    private String idStr;
     int idInp;
 //    private String foto;
     private String lastName;
@@ -59,15 +58,6 @@ public class UserBean implements Serializable{
 
 
     /////////////Геттеры / Сеттеры /////////////////////////////////////////
-
-
-//    public String getIdStr() {
-//        return idStr;
-//    }
-//
-//    public void setIdStr(String idStr) {
-//        this.idStr = idStr;
-//    }
 
     public int getIdInp() {
         return idInp;

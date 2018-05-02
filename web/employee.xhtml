@@ -25,12 +25,12 @@
 <p:commandButton value="Поиск" actionListener="#{userBean.search}" style="width: 150px; margin: 5px; font-family: serif; font-size: 16px"/>
 <br/>
 
-<p:layout style="background-color: darkgray; height: 700px">
+<p:layout style="height: 700px">
 
-<p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" height="500" styleClass="col_left" >
-    <p:button value="Добавить" id="addUser" onclick="window.open('newEmployeeKard.xhtml', 'description', 'width=1200, height=900, top=200, left=300, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-    <p:button value="Редактировать" id="editUser" href="newEmployeeKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-    <p:commandButton value="Удалить" id="delete" onclick="window.open('deleteUser.xhtml', 'description', 'width=500, height=500, top=200, left=500, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+<p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" style="max-height: 150px; border-radius: 8px" styleClass="col_left" >
+    <p:button value="Добавить" id="addUser" update="userTable" onclick="window.open('newEmployeeKard.xhtml', 'description', 'width=1200, height=900, top=200, left=300, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+    <p:button value="Редактировать" id="editUser" update="userTable"  href="newEmployeeKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+    <p:button value="Удалить" id="delete" update="userTable"  onclick="window.open('deleteUser.xhtml', 'description', 'width=500, height=500, top=200, left=500, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
     <p:button value="Меню" id="menu" href="home.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
     <p:button value="Выход" id="exit" href="index.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
 </p:layoutUnit>
@@ -39,7 +39,7 @@
 <p:layoutUnit position="center">
 
 <f:view>
-   <p:dataTable var="user" value="#{userBean.users}" rendered="#{not empty userBean.users}" scrollable="true" scrollHeight="650">
+   <p:dataTable id="userTable" var="user" value="#{userBean.users}" rendered="#{not empty userBean.users}" scrollable="true" scrollHeight="650">
 
       <p:column headerText="Id" style="font-family: serif; font-size: 14px; width: 5%">
          <h:outputText value="#{user.id}" style="font-family: serif; font-size: 16px"/>
@@ -99,7 +99,7 @@
 </p:layoutUnit>
 
 
-    <p:layoutUnit position="east" resizable="true" maxSize="120" minSize="50" styleClass="col_left">
+    <p:layoutUnit position="east" resizable="true" maxSize="120" minSize="50" style="max-height: 150px; border-radius: 8px" styleClass="col_left">
         <p:button value="Заказы" id="orders" href="orderBook.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
         <p:button value="Клиенты" id="clients" href="client.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
         <p:button value="Склад" id="stock" href="stock.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>

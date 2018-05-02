@@ -26,13 +26,13 @@
 
         <br/>
 
-        <p:inputNumber id="id" value="#{userBean.idInp}" decimalPlaces="0" styleClass="input">
-            <p:ajax update="id" />
+        <p:inputNumber id="id" value="#{userBean.idInp}" decimalSeparator="0" type="int" styleClass="input">
+            <!--<p:ajax update="id" />-->
         </p:inputNumber>
 
         <br/>
 
-        <p:commandButton value="Удалить" id="deleteUser" actionListener="#{userBean.deleted()}"   style="width: 80%; margin: 10%; border-radius: 10px"/>
+        <p:commandButton value="Удалить" id="deleteUser" actionListener="#{userBean.deleted()}" style="width: 80%; margin: 10%; border-radius: 10px"/>
 
     </h:form>
 </h:body>

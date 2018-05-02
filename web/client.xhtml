@@ -25,10 +25,10 @@
     <p:commandButton value="Поиск" actionListener="#{clientBean.search}" style="width: 150px; margin: 5px; font-family: serif; font-size: 16px"/>
     <br/>
 
-    <p:layout style="background-color: darkgray">
+    <p:layout style="height: 700px">
 
-        <p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" styleClass="col_left" >
-            <p:button value="Добавить" href="newClientKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+        <p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" style="max-height: 150px; border-radius: 8px" styleClass="col_left" >
+            <p:button value="Добавить" onclick="window.open('newClientKard.xhtml', 'description', 'width=1200, height=900, top=200, left=300, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
             <p:button value="Редактировать" href="newClientKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
             <p:commandButton value="Удалить" actionListener="#{clientBean.deleted}" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
             <p:button value="Меню" href="home.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
@@ -39,7 +39,7 @@
         <p:layoutUnit position="center">
 
             <f:view>
-                <p:dataTable var="client" value="#{clientBean.clients}" rendered="#{not empty clientBean.clients}">
+                <p:dataTable id="clientTable" var="client" value="#{clientBean.clients}" rendered="#{not empty clientBean.clients}" scrollable="true" scrollHeight="650">
 
                     <p:column headerText="Id" style="font-family: serif; font-size: 14px; width: 5%">
                         <h:outputText value="#{client.id}" style="font-family: serif; font-size: 14px"/>
@@ -80,7 +80,7 @@
         </p:layoutUnit>
 
 
-        <p:layoutUnit position="east" resizable="true" maxSize="120" minSize="50" styleClass="col_left">
+        <p:layoutUnit position="east" resizable="true" maxSize="120" minSize="50" style="max-height: 150px; border-radius: 8px" styleClass="col_left">
             <p:button value="Заказы" href="orderBook.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
             <p:button value="Сотрудники" href="employee.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
             <p:button value="Склад" href="stock.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>

@@ -21,35 +21,44 @@
 
 
     <h:form>
-        <p:growl id="messages" showDetail="true" />
+        <p:growl id="messages" life="2000" showDetail="true" />
 
-        <h:panelGrid columns="2" cellpadding="7" style="width: 100%; font-family: serif">
+        <p:layout style="background-color: darkgray">
 
-            <p:outputLabel value="Фамилия" for="lastName" style="font-family: serif"/>
-            <p:inputText id="lastName" value="#{client.clientLastName}" style="width: 100%" styleClass="input"/>
+            <p:layoutUnit position="west" resizable="true" maxSize="200" minSize="50" styleClass="col_left">
+                <p:commandButton value="Сохранить" id="saveToDB" actionListener="#{clientBean.createClient()}" onclick="window.close()" update="growl" style="width: 80%; margin: 10%; border-radius: 10px"/>
+                <p:button value="Отмена" id="cansel" onclick="window.close()" style="width: 80%; margin: 10%; border-radius: 10px"/>
+            </p:layoutUnit>
 
-            <p:outputLabel value="Имя" for="firstName" style="font-family: serif"/>
-            <p:inputText id="firstName" value="#{client.clientFirstName}" style="width: 100%" styleClass="input"/>
+            <p:layoutUnit position="center">
 
-            <p:outputLabel value="Отчество" for="fatherName" style="font-family: serif"/>
-            <p:inputText id="fatherName" value="#{client.clientFatherName}" style="width: 100%" styleClass="input"/>
+                <h:panelGrid columns="2" cellpadding="14" style="width: 100%; font-family: serif">
 
-            <p:outputLabel value="Адрес" for="address" style="font-family: serif"/>
-            <p:inputText id="address" value="#{client.adressHome}" style="width: 100%" styleClass="input"/>
+                    <p:outputLabel value="Фамилия" for="lastName" style="font-family: serif"/>
+                    <p:inputText id="lastName" value="#{clientBean.lastName}" style="width: 100%" styleClass="input"/>
 
-            <p:outputLabel value="Телефон" for="phoneNumber" style="font-family: serif"/>
-            <p:inputText id="phoneNumber" value="#{client.clientPhoneNumber}" mask="(999) 999-9999" style="width: 100%" styleClass="input"/>
+                    <p:outputLabel value="Имя" for="firstName" style="font-family: serif"/>
+                    <p:inputText id="firstName" value="#{clientBean.firstName}" style="width: 100%" styleClass="input"/>
 
-            <p:outputLabel value="E_mail" for="e_mail" style="font-family: serif"/>
-            <p:inputText id="e_mail" value="#{cllient.e_mail}" style="width: 100%" styleClass="input"/>
+                    <p:outputLabel value="Отчество" for="fatherName" style="font-family: serif"/>
+                    <p:inputText id="fatherName" value="#{clientBean.fatherName}" style="width: 100%" styleClass="input"/>
 
-            <p:outputLabel value="Дата регистрации" for="dateRegistration" style="font-family: serif"/>
-            <p:inputText id="dateRegistration" value="#{client.dateRegistration}" mask="99/99/9999" style="width: 100%" styleClass="input"/>
+                    <p:outputLabel value="Адрес" for="address" style="font-family: serif"/>
+                    <p:inputText id="address" value="#{clientBean.address}" style="width: 100%" styleClass="input"/>
 
-        </h:panelGrid>
+                    <p:outputLabel value="Телефон" for="phoneNumber" style="font-family: serif"/>
+                    <p:inputText id="phoneNumber" value="#{clientBean.phoneNumber}" mask="(999) 999-9999" style="width: 100%" styleClass="input"/>
 
-        <p:button value="Отправить" style="width: 200px; margin: 20px; border-radius: 10px"/>
-        <p:button value="Отмена" style="width: 200px; margin: 20px; border-radius: 10px"/>
+                    <p:outputLabel value="E_mail" for="e_mail" style="font-family: serif"/>
+                    <p:inputText id="e_mail" value="#{clientBean.eMail}" style="width: 100%" styleClass="input"/>
+
+                    <p:outputLabel value="Дата регистрации" for="dateRegistration" style="font-family: serif"/>
+                    <p:calendar id="dateRegistration" value="#{clientBean.dateRegistration}" locale="de" navigator="true" pattern="yyyy-MMM-dd" style="width: 100%" styleClass="input"/>
+
+                </h:panelGrid>
+            </p:layoutUnit>
+
+        </p:layout>+
 
     </h:form>
 </h:body>
