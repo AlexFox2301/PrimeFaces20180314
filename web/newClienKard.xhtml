@@ -21,39 +21,60 @@
 
 
     <h:form>
-        <p:growl id="messages" life="2000" showDetail="true" />
+        <p:growl id="growl" life="2000" showDetail="true" />
 
         <p:layout style="background-color: darkgray">
 
-            <p:layoutUnit position="west" resizable="true" maxSize="200" minSize="50" styleClass="col_left">
-                <p:commandButton value="Сохранить" id="saveToDB" actionListener="#{clientBean.createClient()}" onclick="window.close()" update="growl" style="width: 80%; margin: 10%; border-radius: 10px"/>
-                <p:button value="Отмена" id="cansel" onclick="window.close()" style="width: 80%; margin: 10%; border-radius: 10px"/>
+            <p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" styleClass="col_left">
+                <p:commandButton value="Сохранить" id="saveToDB" actionListener="#{clientBean.createClient()}" update="growl" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+                <p:button value="Отмена" id="cansel" onclick="window.close()" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
             </p:layoutUnit>
 
             <p:layoutUnit position="center">
 
-                <h:panelGrid columns="2" cellpadding="14" style="width: 100%; font-family: serif">
+                <h:panelGrid columns="3" cellpadding="7" style="width: 100%; font-family: serif">
 
                     <p:outputLabel value="Фамилия" for="lastName" style="font-family: serif"/>
-                    <p:inputText id="lastName" value="#{clientBean.lastName}" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="lastName" value="#{clientBean.lastName}" style="width: 100%" styleClass="input">
+                        <p:ajax event="keyup" update="outLastName"/>
+                    </p:inputText>
+                    <h:outputText id="outLastName" value="#{clientBean.lastName}" />
 
                     <p:outputLabel value="Имя" for="firstName" style="font-family: serif"/>
-                    <p:inputText id="firstName" value="#{clientBean.firstName}" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="firstName" value="#{clientBean.firstName}" style="width: 100%" styleClass="input">
+                        <p:ajax event="keyup" update="outFirstName"/>
+                    </p:inputText>
+                    <h:outputText id="outFirstName" value="#{clientBean.firstName}" />
 
                     <p:outputLabel value="Отчество" for="fatherName" style="font-family: serif"/>
-                    <p:inputText id="fatherName" value="#{clientBean.fatherName}" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="fatherName" value="#{clientBean.fatherName}" style="width: 100%" styleClass="input">
+                        <p:ajax event="keyup" update="outFatherName"/>
+                    </p:inputText>
+                    <h:outputText id="outFatherName" value="#{clientBean.fatherName}" />
 
                     <p:outputLabel value="Адрес" for="address" style="font-family: serif"/>
-                    <p:inputText id="address" value="#{clientBean.address}" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="address" value="#{clientBean.address}" style="width: 100%" styleClass="input">
+                        <p:ajax event="keyup" update="outAddress"/>
+                    </p:inputText>
+                    <h:outputText id="outAddress" value="#{clientBean.address}" />
 
                     <p:outputLabel value="Телефон" for="phoneNumber" style="font-family: serif"/>
-                    <p:inputText id="phoneNumber" value="#{clientBean.phoneNumber}" mask="(999) 999-9999" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="phoneNumber" value="#{clientBean.phoneNumber}" mask="(999) 999-9999" style="width: 100%" styleClass="input">
+                        <p:ajax event="keyup" update="outPhoneNumber"/>
+                    </p:inputText>
+                    <h:outputText id="outPhoneNumber" value="#{clientBean.phoneNumber}" />
 
                     <p:outputLabel value="E_mail" for="e_mail" style="font-family: serif"/>
-                    <p:inputText id="e_mail" value="#{clientBean.eMail}" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="e_mail" value="#{clientBean.eMail}" style="width: 100%" styleClass="input">
+                        <p:ajax event="keyup" update="outEmail"/>
+                    </p:inputText>
+                    <h:outputText id="outEmail" value="#{clientBean.eMail}" />
 
                     <p:outputLabel value="Дата регистрации" for="dateRegistration" style="font-family: serif"/>
-                    <p:calendar id="dateRegistration" value="#{clientBean.dateRegistration}" locale="de" navigator="true" pattern="yyyy-MMM-dd" style="width: 100%" styleClass="input"/>
+                    <p:calendar id="dateRegistration" value="#{clientBean.dateRegistration}" locale="en" navigator="true" pattern="yyyy-mm-dd" style="width: 100%" styleClass="input">
+                        <p:ajax event="keyup" update="outDateRegistration"/>
+                    </p:calendar>
+                    <h:outputText id="outDateRegistration" value="#{clientBean.dateRegistration}" />
 
                 </h:panelGrid>
             </p:layoutUnit>

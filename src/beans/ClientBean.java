@@ -1,5 +1,6 @@
 package beans;
 
+//import View.ClientView;
 import dao.ClientDAO;
 import tables.Client;
 
@@ -11,12 +12,13 @@ import java.util.List;
 
 @Named
 @SessionScoped
+
 public class ClientBean {
 
     @EJB
     ClientDAO clientDAO;
 
-
+//ClientView clientView;
 
     public List<Client> getClients(){
         return clientDAO.findAll();
@@ -36,7 +38,7 @@ public class ClientBean {
 
     private String searchText;
 
-    /////////////Геттеры / Сеттеры /////////////////////////////////////////
+//    /////////////Геттеры / Сеттеры /////////////////////////////////////////
 
 
     public int getIdInputClient() {
@@ -113,30 +115,43 @@ public class ClientBean {
 
 ///////////////Методы//////////////////////////////////////////////////
 
-//    public void createClient (){
-//        Client client;
-//        client.setClientLastName();
-//        client.setClientFirstName();
-//        client.setClientFatherName();
-//
-//    }
-
-    public void search(){}//липовая заглушка
+        public void search(){}//липовая заглушка
 
     public void createClient(){
 
-        Client clientForDB = new Client();
-        clientForDB.setClientLastName(lastName);
-        clientForDB.setClientFirstName(firstName);
-        clientForDB.setClientFatherName(fatherName);
-        clientForDB.setAdressHome(address);
-        clientForDB.setClientPhoneNumder(phoneNumber);
-        clientForDB.setE_mail(eMail);
-        clientForDB.setDateRegistration(dateRegistration);
+        try{
+            Client clientForDB = new Client();
+            clientDAO.addMessage("0");
+            clientForDB.setClientLastName(lastName);
+//            clientForDB.setClientLastName(clientView.getLastName());
+            clientDAO.addMessage("1");
+            clientForDB.setClientFirstName(firstName);
+//            clientForDB.setClientFirstName(clientView.getFirstName());
+            clientDAO.addMessage("2");
+            clientForDB.setClientFatherName(fatherName);
+//            clientForDB.setClientFatherName(clientView.getFatherName());
+            clientDAO.addMessage("3");
+            clientForDB.setAdressHome(address);
+//            clientForDB.setAdressHome(clientView.getAddress());
+            clientDAO.addMessage("4");
+            clientForDB.setClientPhoneNumder(phoneNumber);
+//            clientForDB.setClientPhoneNumber(clientView.getPhoneNumber());
+            clientDAO.addMessage("5");
+            clientForDB.setE_mail(eMail);
+//            clientForDB.setE_mail(clientView.geteMail());
+            clientDAO.addMessage("6");
+            clientForDB.setDateRegistration(dateRegistration);
+//            clientForDB.setDateRegistration(clientView.getDateRegistration());
+            clientDAO.addMessage("8");
 
         clientDAO.addClient(clientForDB);
+        clientDAO.addMessage("9");
+        }
+        catch (Exception e){clientDAO.addMessage("Пиздец");}
 
     }
 
-    public void deleted(){}//липовая заглушка
+    public void deleted(){
+
+    }//липовая заглушка
 }

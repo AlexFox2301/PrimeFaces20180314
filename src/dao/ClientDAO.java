@@ -19,16 +19,14 @@ public class ClientDAO {
         return emClient.createQuery("select c from Client c").getResultList();
     }
 
-    public boolean addClient (Client clientEntity){
+    public void addClient (Client clientEntity){
 
         try {
             emClient.merge(clientEntity);
             addMessage("Запись добавлена в Базу данных");
-            return true;
-        } catch (Exception e){
+            } catch (Exception e){
             addMessage("Провал!");
-            return false;
-        }
+            }
     }
 
     public void addMessage(String summary) {

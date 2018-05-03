@@ -75,8 +75,8 @@ public class Client {
         return clientPhoneNumder;
     }
 
-    public void setClientPhoneNumder(String clientPhoneNumder) {
-        this.clientPhoneNumder = clientPhoneNumder;
+    public void setClientPhoneNumder(String clientPhoneNumber) {
+        this.clientPhoneNumder = clientPhoneNumber;
     }
 
     public String getE_mail() {
