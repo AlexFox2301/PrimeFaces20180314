@@ -222,7 +222,7 @@ public class UserBean implements Serializable{
 
     ///////////////Методы//////////////////////////////////////////////////
 
-    public void createUser(){
+    public String createUser(){
 
         User userFromDB = new User();
         userFromDB.setLastName(lastName);
@@ -237,7 +237,9 @@ public class UserBean implements Serializable{
         userFromDB.setDateAdmissiom(dateAdmissiom);
         userFromDB.setDateOfDismissal(dateOfDismissal);
 
-        userDAO.addUser(userFromDB);//();
+        userDAO.addUser(userFromDB);
+
+        return "client";
     } ////НЕРАБОТАЕТ
 
 
@@ -247,9 +249,10 @@ public class UserBean implements Serializable{
 
     public void search(){}//липовая заглушка
 
-    public void deleted(){
+    public String deleted(){
 
         userDAO.deleteUser(idInp);
+        return "client";
 
     }//НЕРАБОТАЕТ
 

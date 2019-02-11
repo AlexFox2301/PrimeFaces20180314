@@ -71,7 +71,7 @@
                     <h:outputText id="outEmail" value="#{clientBean.eMail}" />
 
                     <p:outputLabel value="Дата регистрации" for="dateRegistration" style="font-family: serif"/>
-                    <p:calendar id="dateRegistration" value="#{clientBean.dateRegistration}" locale="en" navigator="true" pattern="yyyy-mm-dd" style="width: 100%" styleClass="input">
+                    <p:calendar id="dateRegistration" value="#{clientBean.dateRegistration}" locale="en" navigator="true" pattern="yyyy-MMMM-dd" style="width: 100%" styleClass="input">
                         <p:ajax event="keyup" update="outDateRegistration"/>
                     </p:calendar>
                     <h:outputText id="outDateRegistration" value="#{clientBean.dateRegistration}" />

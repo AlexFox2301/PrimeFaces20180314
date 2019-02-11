@@ -30,7 +30,7 @@
         <p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" style="max-height: 150px; border-radius: 8px" styleClass="col_left" >
             <p:button value="Добавить" onclick="window.open('newClienKard.xhtml', 'description', 'width=700, height=620, top=200, left=300, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
             <p:button value="Редактировать" href="newClientKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-            <p:button value="Удалить" actionListener="#{clientBean.deleted}" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Удалить" onclick="window.open('deleteClient.xhtml', 'description', 'width=500, height=500, top=200, left=500, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
             <p:button value="Меню" href="home.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
             <p:button value="Выход" href="index.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
         </p:layoutUnit>
@@ -69,9 +69,9 @@
                         <h:outputText value="#{client.e_mail}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
-                    <p:column headerText="Дата регистрации" style="font-family: serif; font-size: 14px">
-                        <h:outputText value="#{client.dateRegistration}" style="font-family: serif; font-size: 14px"/>
-                    </p:column>
+                    <!--<p:column headerText="Дата регистрации" style="font-family: serif; font-size: 14px">-->
+                        <!--<h:outputText value="#{client.dateRegistration}" style="font-family: serif; font-size: 14px"/>-->
+                    <!--</p:column>-->
 
                 </p:dataTable>
             </f:view>

@@ -1,8 +1,6 @@
 package dao;
 
 import com.mysql.jdbc.StringUtils;
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
 import tables.User;
 
 import javax.ejb.Stateless;

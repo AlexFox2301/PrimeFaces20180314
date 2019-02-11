@@ -1,36 +1,40 @@
 package tables;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 
 @Entity
-public class Client {
+public class Client implements Serializable {
 
     @Id @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Basic
+//    @Basic
     private String clientLastName;          //Фамилия
-    @Basic
+//    @Basic
     private String clientFirstName;         //Имя
-    @Basic
+//    @Basic
     private String clientFatherName;        //Отчество
-    @Basic
+//    @Basic
     private String adressHome;              //Адрес
-    @Basic
+//    @Basic
     private String clientPhoneNumder;       //Номер телефона
-    @Basic
+//    @Basic
     private String e_mail;
-    @Basic
+
+//    @NotNull
     private Date dateRegistration;          //Дата регистрации
 
 
-    @OneToMany(mappedBy = "client")//, fetch = FetchType.EAGER
-    private Collection<Zakaz> zakazes;
+
 
     //////////////////////////Геттеры / Сеттеры//////////////////////
 
+//    @Id
+//    @GeneratedValue (strategy = GenerationType.AUTO)
     public Integer getId() {
         return id;
     }
@@ -39,6 +43,7 @@ public class Client {
         this.id = id;
     }
 
+//    @Basic
     public String getClientLastName() {
         return clientLastName;
     }
@@ -47,6 +52,7 @@ public class Client {
         this.clientLastName = clientLastName;
     }
 
+//    @Basic
     public String getClientFirstName() {
         return clientFirstName;
     }
@@ -55,6 +61,7 @@ public class Client {
         this.clientFirstName = clientFirstName;
     }
 
+//    @Basic
     public String getClientFatherName() {
         return clientFatherName;
     }
@@ -63,6 +70,7 @@ public class Client {
         this.clientFatherName = clientFatherName;
     }
 
+//    @Basic
     public String getAdressHome() {
         return adressHome;
     }
@@ -71,6 +79,7 @@ public class Client {
         this.adressHome = adressHome;
     }
 
+//    @Basic
     public String getClientPhoneNumder() {
         return clientPhoneNumder;
     }
@@ -79,6 +88,7 @@ public class Client {
         this.clientPhoneNumder = clientPhoneNumber;
     }
 
+//    @Basic
     public String getE_mail() {
         return e_mail;
     }
@@ -87,9 +97,12 @@ public class Client {
         this.e_mail = e_mail;
     }
 
+//    @NotNull
+//    public Date  getDateRegistration() {
     public String  getDateRegistration() {
-        SimpleDateFormat formatForDate = new SimpleDateFormat("yyyy.mm.dd");
+        SimpleDateFormat formatForDate = new SimpleDateFormat("yyyy-MMMM-dd");
         return formatForDate.format(dateRegistration);
+//        return dateRegistration;
     }
 
     public void setDateRegistration(Date dateRegistration) {
@@ -104,6 +117,9 @@ public class Client {
         this.zakazes = zakaz;
     }
     ////////////////////////Методы///////////////////////////////////////////////
+
+    @OneToMany(mappedBy = "client")//, fetch = FetchType.EAGER
+    private Collection<Zakaz> zakazes;
 
 
     @Override
