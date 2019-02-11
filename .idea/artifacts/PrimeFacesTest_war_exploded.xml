@@ -13,6 +13,9 @@
           <element id="library" level="project" name="Java EE 6-Java EE 6" />
           <element id="library" level="project" name="jstl-1.2" />
           <element id="library" level="project" name="javax.persistence" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/libs/hibernate-annotations-3.0alpha3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/libs/hibernate-annotations-3.4.0.GA.jar" />
+          <element id="library" level="project" name="http-utils-1.5.2" />
         </element>
       </element>
     </root>

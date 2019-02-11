@@ -153,5 +153,6 @@ public class ClientBean {
 
     public void deleted(){
 
+        clientDAO.deleteClient(idInputClient);
     }//липовая заглушка
 }

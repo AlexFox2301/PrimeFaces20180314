@@ -1,12 +1,13 @@
 package dao;
 
-import tables.Client;
 
+import tables.Client;
 import javax.ejb.Stateless;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.Date;
 import java.util.List;
 
 @Stateless
@@ -25,8 +26,19 @@ public class ClientDAO {
             emClient.merge(clientEntity);
             addMessage("Запись добавлена в Базу данных");
             } catch (Exception e){
+
             addMessage("Провал!");
             }
+    }
+
+    public void deleteClient (int idDeletedClien){
+
+        try {
+            emClient.remove(emClient.find(Client.class, idDeletedClien));
+            addMessage("Запись удалена!");
+        }catch (Exception e){
+            addMessage("Пиздец!");
+        }
     }
 
     public void addMessage(String summary) {

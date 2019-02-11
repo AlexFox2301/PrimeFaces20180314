@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Delete User</title>
+    <link rel="shortcut icon" type="image/png" href="galereya/drel-drawing.png" />
+    <h:outputStylesheet library="css" name="style.css"/>
+</h:head>
+
+<h:body styleClass="total">
+
+    <h2 align="center">ЧП "РИО" </h2>
+    <p align="center" >MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
+    <h1 align="center">Удаление Клиента из БД</h1>
+
+    <h:form>
+        <p:growl id="growl" life="2000"/>
+
+        <p:outputLabel value="Ввести id клиента для удаления" for="id" style="font-family: serif"/>
+
+        <br/>
+
+        <!--<p:inputNumber id="id" value="#{clientBean.idInputClient}" decimalSeparator="0" styleClass="input"/>-->
+        <p:inplace id="id" editor="true">
+            <p:inputText value="#{clientBean.idInputClient}" required="true" label="idInputClient" styleClass="input"/>
+        </p:inplace>
+        <br/>
+
+        <p:commandButton value="Удалить" id="deleteClient" actionListener="#{clientBean.deleted}" update="growl" style="width: 80%; margin: 10%; border-radius: 10px"/>
+        <p:keyFilter for="id" mask="num" />
+    </h:form>
+</h:body>
+</html>
+
+
+        <!--onclick="window.close()"-->
