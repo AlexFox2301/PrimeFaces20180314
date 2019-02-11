@@ -7,6 +7,8 @@
       <root url="jar://$PROJECT_DIR$/lib/libs/javax.servlet.jsp.jstl.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/libs/javax.transaction.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/libs/javaee-api-6.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/libs/jsf-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/libs/jsf-impl-2.1.7.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
