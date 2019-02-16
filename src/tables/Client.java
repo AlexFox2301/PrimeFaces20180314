@@ -116,6 +116,25 @@ public class Client implements Serializable {
     public void setZakazes(Collection<Zakaz> zakaz) {
         this.zakazes = zakaz;
     }
+
+
+    ////////////////////////Конструкторы///////////////////////////////////////////////
+
+
+    public Client() {
+    }
+
+//    public Client(String clientLastName, String clientFirstName, String clientFatherName, String adressHome, String clientPhoneNumder, String e_mail, Date dateRegistration) {
+//        this.clientLastName = clientLastName;
+//        this.clientFirstName = clientFirstName;
+//        this.clientFatherName = clientFatherName;
+//        this.adressHome = adressHome;
+//        this.clientPhoneNumder = clientPhoneNumder;
+//        this.e_mail = e_mail;
+//        this.dateRegistration = dateRegistration;
+//    }
+
+
     ////////////////////////Методы///////////////////////////////////////////////
 
     @OneToMany(mappedBy = "client")//, fetch = FetchType.EAGER

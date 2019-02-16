@@ -50,11 +50,9 @@
     <orderEntry type="library" name="jstl-1.2" level="project" />
     <orderEntry type="library" name="PrimeFaces-6.1" level="project" />
     <orderEntry type="library" name="javax.persistence" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2.173 - CDI: Contexts and Dependency Injection" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2.173 - JSF" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2.173 - EJB" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2.173 - CDI: Contexts and Dependency Injection" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2.173 - JSF" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2.173 - EJB" level="application_server_libraries" />
+    <orderEntry type="library" name="http-utils-1.5.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2.174 - CDI: Contexts and Dependency Injection" level="application_server_libraries" />
+    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2.174 - JSF" level="application_server_libraries" />
+    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2.174 - EJB" level="application_server_libraries" />
   </component>
 </module>

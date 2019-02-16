@@ -35,9 +35,8 @@
                 <h:panelGrid columns="3" cellpadding="7" style="width: 100%; font-family: serif">
 
                     <p:outputLabel value="Фамилия" for="lastName" style="font-family: serif"/>
-                    <p:inputText id="lastName" value="#{clientBean.lastName}" style="width: 100%" styleClass="input">
+                    <p:inputText id="lastName" value="#{clientBean.lastName}" style="width: 100%" styleClass="input"/>
                         <p:ajax event="keyup" update="outLastName"/>
-                    </p:inputText>
                     <h:outputText id="outLastName" value="#{clientBean.lastName}" />
 
                     <p:outputLabel value="Имя" for="firstName" style="font-family: serif"/>
@@ -59,9 +58,9 @@
                     <h:outputText id="outAddress" value="#{clientBean.address}" />
 
                     <p:outputLabel value="Телефон" for="phoneNumber" style="font-family: serif"/>
-                    <p:inputText id="phoneNumber" value="#{clientBean.phoneNumber}" mask="(999) 999-9999" style="width: 100%" styleClass="input">
+                    <p:inputMask id="phoneNumber" value="#{clientBean.phoneNumber}" mask="+38(099) 999-9999" style="width: 100%" styleClass="input">
                         <p:ajax event="keyup" update="outPhoneNumber"/>
-                    </p:inputText>
+                    </p:inputMask>
                     <h:outputText id="outPhoneNumber" value="#{clientBean.phoneNumber}" />
 
                     <p:outputLabel value="E_mail" for="e_mail" style="font-family: serif"/>
@@ -79,7 +78,7 @@
                 </h:panelGrid>
             </p:layoutUnit>
 
-        </p:layout>+
+        </p:layout>
 
     </h:form>
 </h:body>

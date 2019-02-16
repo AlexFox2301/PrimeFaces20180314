@@ -1,24 +1,26 @@
 package beans;
 
-//import View.ClientView;
+
 import dao.ClientDAO;
 import tables.Client;
 
 import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Named;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-@Named
+//@Named
+@ManagedBean
 @SessionScoped
+//@ManagedBean
 
-public class ClientBean {
+public class ClientBean implements Serializable {
 
     @EJB
     ClientDAO clientDAO;
-
-//ClientView clientView;
 
     public List<Client> getClients(){
         return clientDAO.findAll();
@@ -26,7 +28,10 @@ public class ClientBean {
 
     /////////////Переменные/////////////////////////////////////////////////
 
+    private Client client;
+
     private int idInputClient;
+
     private String lastName;
     private String firstName;
     private String fatherName;
@@ -120,34 +125,43 @@ public class ClientBean {
     public void createClient(){
 
         try{
+
+//            client = clientDAO.
             Client clientForDB = new Client();
-            clientDAO.addMessage("0");
-            clientForDB.setClientLastName(lastName);
-//            clientForDB.setClientLastName(clientView.getLastName());
-            clientDAO.addMessage("1");
+            clientDAO.addMessage("Создано");
+
+            clientForDB.setClientLastName(this.lastName);
+            clientDAO.addMessage(lastName);
+
             clientForDB.setClientFirstName(firstName);
-//            clientForDB.setClientFirstName(clientView.getFirstName());
-            clientDAO.addMessage("2");
+            clientDAO.addMessage(firstName);
+
             clientForDB.setClientFatherName(fatherName);
-//            clientForDB.setClientFatherName(clientView.getFatherName());
-            clientDAO.addMessage("3");
+            clientDAO.addMessage(fatherName);
+
             clientForDB.setAdressHome(address);
-//            clientForDB.setAdressHome(clientView.getAddress());
-            clientDAO.addMessage("4");
+            clientDAO.addMessage(address);
+
             clientForDB.setClientPhoneNumder(phoneNumber);
-//            clientForDB.setClientPhoneNumber(clientView.getPhoneNumber());
-            clientDAO.addMessage("5");
+            clientDAO.addMessage(phoneNumber);
+
             clientForDB.setE_mail(eMail);
-//            clientForDB.setE_mail(clientView.geteMail());
-            clientDAO.addMessage("6");
+            clientDAO.addMessage(eMail);
+
             clientForDB.setDateRegistration(dateRegistration);
-//            clientForDB.setDateRegistration(clientView.getDateRegistration());
-            clientDAO.addMessage("8");
+            clientDAO.addMessage("Some date");
 
         clientDAO.addClient(clientForDB);
-        clientDAO.addMessage("9");
+        clientDAO.addMessage("Добавлено");
         }
         catch (Exception e){clientDAO.addMessage("Пиздец");}
+        lastName = null;
+        firstName = null;
+        fatherName = null;
+        address = null;
+        phoneNumber = null;
+        eMail = null;
+        dateRegistration = null;
 
     }
 
