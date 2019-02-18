@@ -8,8 +8,9 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <h:head>
-    <title>New Client Kard</title>
-    <link rel="shortcut icon" type="image/png" href="galereya/drel-drawing.png" />
+    <title>Edit Client Kard</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" type="image/png" href="../galereya/drel-drawing.png" />
     <h:outputStylesheet library="css" name="style.css"/>
 </h:head>
 
@@ -26,7 +27,7 @@
         <p:layout style="background-color: darkgray">
 
             <p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" styleClass="col_left">
-                <p:commandButton value="Сохранить" id="saveToDB" actionListener="#{clientBean.createClient()}" update="growl" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+                <p:commandButton value="Сохранить" id="saveToDB" actionListener="#{clientBean.editClient}" update="growl" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
                 <p:button value="Отмена" id="cansel" onclick="window.close()" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
             </p:layoutUnit>
 
@@ -35,8 +36,8 @@
                 <h:panelGrid columns="3" cellpadding="7" style="width: 100%; font-family: serif">
 
                     <p:outputLabel value="Фамилия" for="lastName" style="font-family: serif"/>
-                    <p:inputText id="lastName" value="#{clientBean.lastName}" style="width: 100%" styleClass="input"/>
-                        <p:ajax event="keyup" update="outLastName"/>
+                    <p:inputText id="lastName" value="#{clientBean.lastName}" placeholder="#{clientBean.c}" style="width: 100%" styleClass="input"/>
+                    <p:ajax event="keyup" update="outLastName"/>
                     <h:outputText id="outLastName" value="#{clientBean.lastName}" />
 
                     <p:outputLabel value="Имя" for="firstName" style="font-family: serif"/>
@@ -82,4 +83,6 @@
 
     </h:form>
 </h:body>
+
+
 </html>

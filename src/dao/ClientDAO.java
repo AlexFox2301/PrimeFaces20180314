@@ -7,7 +7,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.Date;
+import javax.persistence.Query;
 import java.util.List;
 
 @Stateless
@@ -18,6 +18,10 @@ public class ClientDAO {
 
     public List<Client> findAll(){
         return emClient.createQuery("select c from Client c").getResultList();
+    }
+
+    public Client findClint(int findId){
+        return (Client) emClient.createQuery("select c from Client c where c.id = findId");
     }
 
     public void addClient (Client clientEntity){
@@ -38,6 +42,16 @@ public class ClientDAO {
             addMessage("Запись удалена!");
         }catch (Exception e){
             addMessage("Пиздец!");
+        }
+    }
+
+
+    public void editClient(Client editClient){
+        try {
+            emClient.merge(editClient);
+            addMessage("Изменения сохранены");
+        }catch (Exception e){
+            addMessage("Поломалось");
         }
     }
 

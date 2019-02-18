@@ -9,7 +9,7 @@
 
 <h:head>
     <title>Employee_Base</title>
-    <link rel="shortcut icon" type="image/png" href="galereya/drel-drawing.png" />
+    <link rel="shortcut icon" type="image/png" href="../galereya/drel-drawing.png" />
 
     <!--<h:outputStylesheet library="css" name="style.css"/>-->
 </h:head>
@@ -29,17 +29,24 @@
 
         <p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" style="max-height: 150px; border-radius: 8px" styleClass="col_left" >
             <p:button value="Добавить" onclick="window.open('newClienKard.xhtml', 'description', 'width=700, height=620, top=200, left=300, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-            <p:button value="Редактировать" href="newClientKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Редактировать"  href="editClient.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
             <p:button value="Удалить" onclick="window.open('deleteClient.xhtml', 'description', 'width=500, height=500, top=200, left=500, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-            <p:button value="Меню" href="home.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-            <p:button value="Выход" href="index.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Меню" href="../home.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Выход" href="../index.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
         </p:layoutUnit>
 
 
         <p:layoutUnit position="center">
 
             <f:view>
-                <p:dataTable id="clientTable" var="client" value="#{clientBean.clients}" rendered="#{not empty clientBean.clients}" scrollable="true" scrollHeight="650">
+                <p:dataTable id="clientTable" var="client" value="#{clientBean.clients}" rendered="#{not empty clientBean.clients}" scrollable="true" scrollHeight="550">
+
+                    <!--<f:facet name="header">-->
+
+                        <!--<p:commandButton id="toggler" type="button" value="Columns" style="float:right" icon="pi pi-align-justify" />-->
+                        <!--<p:columnToggler datasource="clients" trigger="toggler" />-->
+                    <!--</f:facet>-->
+
 
                     <p:column headerText="Id" style="font-family: serif; font-size: 14px; width: 5%">
                         <h:outputText value="#{client.id}" style="font-family: serif; font-size: 14px"/>
@@ -69,21 +76,28 @@
                         <h:outputText value="#{client.e_mail}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
-                    <!--<p:column headerText="Дата регистрации" style="font-family: serif; font-size: 14px">-->
-                        <!--<h:outputText value="#{client.dateRegistration}" style="font-family: serif; font-size: 14px"/>-->
+                    <p:column headerText="Дата регистрации" style="font-family: serif; font-size: 14px">
+                        <h:outputText value="#{client.getDateRegistration()}" style="font-family: serif; font-size: 14px"/>
+                    </p:column>
+
+                    <!--<p:column style="width: 35px">-->
+                        <!--<p:rowEditor/>-->
                     <!--</p:column>-->
 
                 </p:dataTable>
+
+
+
             </f:view>
         </p:layoutUnit>
 
 
         <p:layoutUnit position="east" resizable="true" maxSize="120" minSize="50" style="max-height: 150px; border-radius: 8px" styleClass="col_left">
-            <p:button value="Заказы" href="orderBook.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-            <p:button value="Сотрудники" href="employee.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-            <p:button value="Склад" href="stock.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-            <p:button value="Поставщики" href="vendor.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-            <p:button value="Галерея" href="galereya.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Заказы" href="../ordersPages/orderBook.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Сотрудники" href="../employeesPages/employee.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Склад" href="../fittingsPages/stock.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Поставщики" href="../vendorsPages/vendor.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Галерея" href="../galereya.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
         </p:layoutUnit>
 
     </p:layout>

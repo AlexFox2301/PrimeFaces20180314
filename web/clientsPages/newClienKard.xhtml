@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>New Client Kard</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" type="image/png" href="../galereya/drel-drawing.png" />
+    <h:outputStylesheet library="css" name="style.css"/>
+</h:head>
+
+<h:body styleClass="total">
+
+    <h2 align="center">ЧП "РИО" </h2>
+    <p align="center" >MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
+    <h1 align="center">Карточка Клиента</h1>
+
+
+    <h:form>
+        <p:growl id="growl" life="2000" showDetail="true" />
+
+        <p:layout style="background-color: darkgray">
+
+            <p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" styleClass="col_left">
+                <p:commandButton value="Сохранить" id="saveToDB" actionListener="#{clientBean.createClient()}" update="growl" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+                <p:button value="Отмена" id="cansel" onclick="window.close()" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+
+                <h:panelGrid columns="3" cellpadding="7" style="width: 100%; font-family: serif">
+
+                    <p:outputLabel value="Фамилия" for="lastName" style="font-family: serif"/>
+                    <p:inputText id="lastName" value="#{clientBean.lastName}" style="width: 100%" styleClass="input"/>
+                        <p:ajax event="keyup" update="outLastName"/>
+                    <h:outputText id="outLastName" value="#{clientBean.lastName}" />
+
+                    <p:outputLabel value="Имя" for="firstName" style="font-family: serif"/>
+                    <p:inputText id="firstName" value="#{clientBean.firstName}" style="width: 100%" styleClass="input">
+                        <p:ajax event="keyup" update="outFirstName"/>
+                    </p:inputText>
+                    <h:outputText id="outFirstName" value="#{clientBean.firstName}" />
+
+                    <p:outputLabel value="Отчество" for="fatherName" style="font-family: serif"/>
+                    <p:inputText id="fatherName" value="#{clientBean.fatherName}" style="width: 100%" styleClass="input">
+                        <p:ajax event="keyup" update="outFatherName"/>
+                    </p:inputText>
+                    <h:outputText id="outFatherName" value="#{clientBean.fatherName}" />
+
+                    <p:outputLabel value="Адрес" for="address" style="font-family: serif"/>
+                    <p:inputText id="address" value="#{clientBean.address}" style="width: 100%" styleClass="input">
+                        <p:ajax event="keyup" update="outAddress"/>
+                    </p:inputText>
+                    <h:outputText id="outAddress" value="#{clientBean.address}" />
+
+                    <p:outputLabel value="Телефон" for="phoneNumber" style="font-family: serif"/>
+                    <p:inputMask id="phoneNumber" value="#{clientBean.phoneNumber}" mask="+38(099) 999-9999" style="width: 100%" styleClass="input">
+                        <p:ajax event="keyup" update="outPhoneNumber"/>
+                    </p:inputMask>
+                    <h:outputText id="outPhoneNumber" value="#{clientBean.phoneNumber}" />
+
+                    <p:outputLabel value="E_mail" for="e_mail" style="font-family: serif"/>
+                    <p:inputText id="e_mail" value="#{clientBean.eMail}" style="width: 100%" styleClass="input">
+                        <p:ajax event="keyup" update="outEmail"/>
+                    </p:inputText>
+                    <h:outputText id="outEmail" value="#{clientBean.eMail}" />
+
+                    <p:outputLabel value="Дата регистрации" for="dateRegistration" style="font-family: serif"/>
+                    <p:calendar id="dateRegistration" value="#{clientBean.dateRegistration}" locale="en" navigator="true" pattern="yyyy-MMMM-dd" style="width: 100%" styleClass="input">
+                        <p:ajax event="keyup" update="outDateRegistration"/>
+                    </p:calendar>
+                    <h:outputText id="outDateRegistration" value="#{clientBean.dateRegistration}" />
+
+                </h:panelGrid>
+            </p:layoutUnit>
+
+        </p:layout>
+
+    </h:form>
+</h:body>
+</html>

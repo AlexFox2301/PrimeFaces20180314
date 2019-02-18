@@ -2,11 +2,14 @@ package beans;
 
 
 import dao.ClientDAO;
+import org.primefaces.event.RowEditEvent;
 import tables.Client;
 
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.Date;
@@ -169,4 +172,34 @@ public class ClientBean implements Serializable {
 
         clientDAO.deleteClient(idInputClient);
     }//липовая заглушка
+
+    public void editClient(){
+        client = clientDAO.findClint(idInputClient);
+
+        if (lastName.isEmpty()){client.getClientLastName();}
+        else client.setClientLastName(lastName);
+
+        if (firstName.isEmpty()){client.getClientFirstName();}
+        else client.setClientFirstName(firstName);
+
+        if (fatherName.isEmpty()){client.getClientFatherName();}
+        else client.setClientFatherName(fatherName);
+
+        if (address.isEmpty()){client.getAdressHome();}
+        else client.setAdressHome(address);
+
+        if (phoneNumber.isEmpty()){client.getClientPhoneNumder();}
+        else client.setClientPhoneNumder(phoneNumber);
+
+        if (eMail.isEmpty()){client.getE_mail();}
+        else client.setE_mail(eMail);
+
+        if (dateRegistration == null){client.getDateRegistration();}
+        else client.setDateRegistration(dateRegistration);
+
+
+        clientDAO.editClient(client);
+
+        client = null;
+    }
 }

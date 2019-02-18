@@ -9,7 +9,7 @@
 
 <h:head>
     <title>Delete User</title>
-    <link rel="shortcut icon" type="image/png" href="galereya/drel-drawing.png" />
+    <link rel="shortcut icon" type="image/png" href="../galereya/drel-drawing.png" />
     <h:outputStylesheet library="css" name="style.css"/>
 </h:head>
 
@@ -17,23 +17,23 @@
 
     <h2 align="center">ЧП "РИО" </h2>
     <p align="center" >MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
-    <h1 align="center">Удаление сотрудника из БД</h1>
+    <h1 align="center">Удаление Клиента из БД</h1>
 
     <h:form>
         <p:growl id="growl" life="2000"/>
 
-        <p:outputLabel value="Ввести id сотрудника для удаления" for="id" style="font-family: serif"/>
+        <p:outputLabel value="Ввести id клиента для удаления" for="id" style="font-family: serif"/>
 
         <br/>
 
-        <p:inputNumber id="id" value="#{userBean.idInp}" decimalSeparator="0" type="int" styleClass="input">
-            <!--<p:ajax update="id" />-->
-        </p:inputNumber>
-
+        <!--<p:inputNumber id="id" value="#{clientBean.idInputClient}" decimalSeparator="0" styleClass="input"/>-->
+        <p:inplace id="id" editor="true">
+            <p:inputText value="#{clientBean.idInputClient}" required="true" label="idInputClient" styleClass="input"/>
+        </p:inplace>
         <br/>
 
-        <p:commandButton value="Удалить" id="deleteUser" actionListener="#{userBean.deleted()}" style="width: 80%; margin: 10%; border-radius: 10px"/>
-
+        <p:commandButton value="Удалить" id="deleteClient" actionListener="#{clientBean.deleted}" update="growl" style="width: 80%; margin: 10%; border-radius: 10px"/>
+        <p:keyFilter for="id" mask="num" />
     </h:form>
 </h:body>
 </html>

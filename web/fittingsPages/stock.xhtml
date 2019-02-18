@@ -8,8 +8,8 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://primefaces.org/ui ">
 
 <h:head>
-    <title>Vendor_Base</title>
-    <link rel="shortcut icon" type="image/png" href="galereya/drel-drawing.png" />
+    <title>Stock_Base</title>
+    <link rel="shortcut icon" type="image/png" href="../galereya/drel-drawing.png" />
     <!--<h:outputStylesheet library="css" name="style.css"/>-->
 </h:head>
 
@@ -17,18 +17,18 @@
 
     <h2 align="center">ЧП "РИО" </h2>
     <p align="center" >MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
-    <h1 align="center">Поставщики</h1>
+    <h1 align="center">Склад</h1>
 
-    <p:inputText value="#{vendorBean.searchText}" placeholder="Поиск" style="width: 400px; margin: 5px; border-radius: 7px; font-family: serif; font-size: 14px"/>
-    <p:commandButton value="Поиск" actionListener="#{vendorBean.search}" style="width: 150px; margin: 5px; font-family: serif; font-size: 14px"/>
+    <p:inputText value="#{fittingBean.searchText}" placeholder="Поиск" style="width: 400px; margin: 5px; border-radius: 7px; font-family: serif; font-size: 16px"/>
+    <p:commandButton value="Поиск" actionListener="#{fittingBean.search}" style="width: 150px; margin: 5px; font-family: serif; font-size: 16px"/>
     <br/>
 
     <p:layout style="background-color: darkgray">
 
         <p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" styleClass="col_left" >
-            <p:button value="Добавить" href="newVendor.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-            <p:button value="Редактировать" href="newVendorKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-            <p:commandButton value="Удалить" actionListener="#{vendorBean.deleted}" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Добавить" href="newFittingKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Редактировать" href="newFittingKard.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:commandButton value="Удалить" actionListener="#{fittingBean.deleted}" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
             <p:button value="Меню" href="home.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
             <p:button value="Выход" href="index.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
         </p:layoutUnit>
@@ -37,30 +37,22 @@
         <p:layoutUnit position="center">
 
             <f:view>
-                <p:dataTable var="vendor" value="#{vendorBean.vendors}" rendered="#{not empty vendorBean.vendors}">
+                <p:dataTable var="fitting" value="#{fittingBean.fittings}" rendered="#{not empty fittingBean.fittings}">
 
-                    <p:column headerText="Id" style="font-family: serif; font-size: 14px; width: 5%">
-                        <h:outputText value="#{vendor.id}" style="font-family: serif; font-size: 14px"/>
+                    <p:column headerText="Id" style="font-family: serif; font-size: 14px;  width: 5%">
+                        <h:outputText value="#{fitting.id}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
                     <p:column headerText="Наименование" style="font-family: serif; font-size: 14px">
-                        <h:outputText value="#{vendor.vendorName}" style="font-family: serif; font-size: 14px"/>
+                        <h:outputText value="#{fitting.nameFitting}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
-                    <p:column headerText="Адрес" style="font-family: serif; font-size: 14px">
-                        <h:outputText value="#{vendor.vendorAdress}" style="font-family: serif; font-size: 14px"/>
+                    <p:column headerText="Количество" style="font-family: serif; font-size: 14px;  width: 15%">
+                        <h:outputText value="#{fitting.quantity}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
-                    <p:column headerText="Телефон" style="font-family: serif; font-size: 14px">
-                        <h:outputText value="#{vendor.vendorPhoneNumber}" style="font-family: serif; font-size: 14px"/>
-                    </p:column>
-
-                    <p:column headerText="E-mail" style="font-family: serif; font-size: 14px">
-                        <h:outputText value="#{vendor.e_mail}" style="font-family: serif; font-size: 14px"/>
-                    </p:column>
-
-                    <p:column headerText="Прайс Лист" style="font-family: serif; font-size: 14px">
-                        <h:outputText value="#{vendor.priceList}" style="font-family: serif; font-size: 14px"/>
+                    <p:column headerText="Цена" style="font-family: serif; font-size: 14px;  width: 15%">
+                        <h:outputText value="#{fitting.priceFittings}" style="font-family: serif; font-size: 14px"/>
                     </p:column>
 
                 </p:dataTable>
