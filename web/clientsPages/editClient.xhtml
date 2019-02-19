@@ -36,42 +36,42 @@
                 <h:panelGrid columns="3" cellpadding="7" style="width: 100%; font-family: serif">
 
                     <p:outputLabel value="Фамилия" for="lastName" style="font-family: serif"/>
-                    <p:inputText id="lastName" value="#{clientBean.lastName}" placeholder="#{clientBean.c}" style="width: 100%" styleClass="input"/>
+                    <p:inputText id="lastName" value="#{clientBean.lastName}" placeholder="#{clientBean.client.clientLastName}" style="width: 100%" styleClass="input"/>
                     <p:ajax event="keyup" update="outLastName"/>
                     <h:outputText id="outLastName" value="#{clientBean.lastName}" />
 
                     <p:outputLabel value="Имя" for="firstName" style="font-family: serif"/>
-                    <p:inputText id="firstName" value="#{clientBean.firstName}" style="width: 100%" styleClass="input">
+                    <p:inputText id="firstName" value="#{clientBean.firstName}" placeholder="#{clientBean.client.clientFirstName}" style="width: 100%" styleClass="input">
                         <p:ajax event="keyup" update="outFirstName"/>
                     </p:inputText>
                     <h:outputText id="outFirstName" value="#{clientBean.firstName}" />
 
                     <p:outputLabel value="Отчество" for="fatherName" style="font-family: serif"/>
-                    <p:inputText id="fatherName" value="#{clientBean.fatherName}" style="width: 100%" styleClass="input">
+                    <p:inputText id="fatherName" value="#{clientBean.fatherName}" placeholder="#{clientBean.client.clientFatherName}" style="width: 100%" styleClass="input">
                         <p:ajax event="keyup" update="outFatherName"/>
                     </p:inputText>
                     <h:outputText id="outFatherName" value="#{clientBean.fatherName}" />
 
                     <p:outputLabel value="Адрес" for="address" style="font-family: serif"/>
-                    <p:inputText id="address" value="#{clientBean.address}" style="width: 100%" styleClass="input">
+                    <p:inputText id="address" value="#{clientBean.address}" placeholder="#{clientBean.client.adressHome}" style="width: 100%" styleClass="input">
                         <p:ajax event="keyup" update="outAddress"/>
                     </p:inputText>
                     <h:outputText id="outAddress" value="#{clientBean.address}" />
 
                     <p:outputLabel value="Телефон" for="phoneNumber" style="font-family: serif"/>
-                    <p:inputMask id="phoneNumber" value="#{clientBean.phoneNumber}" mask="+38(099) 999-9999" style="width: 100%" styleClass="input">
+                    <p:inputMask id="phoneNumber" value="#{clientBean.phoneNumber}" placeholder="#{clientBean.client.clientPhoneNumder}" mask="+38(099) 999-9999" style="width: 100%" styleClass="input">
                         <p:ajax event="keyup" update="outPhoneNumber"/>
                     </p:inputMask>
                     <h:outputText id="outPhoneNumber" value="#{clientBean.phoneNumber}" />
 
                     <p:outputLabel value="E_mail" for="e_mail" style="font-family: serif"/>
-                    <p:inputText id="e_mail" value="#{clientBean.eMail}" style="width: 100%" styleClass="input">
+                    <p:inputText id="e_mail" value="#{clientBean.eMail}" placeholder="#{clientBean.client.e_mail}" style="width: 100%" styleClass="input">
                         <p:ajax event="keyup" update="outEmail"/>
                     </p:inputText>
                     <h:outputText id="outEmail" value="#{clientBean.eMail}" />
 
                     <p:outputLabel value="Дата регистрации" for="dateRegistration" style="font-family: serif"/>
-                    <p:calendar id="dateRegistration" value="#{clientBean.dateRegistration}" locale="en" navigator="true" pattern="yyyy-MMMM-dd" style="width: 100%" styleClass="input">
+                    <p:calendar id="dateRegistration" value="#{clientBean.dateRegistration}" placeholder="#{clientBean.client.getDateRegistration}" locale="en" navigator="true" pattern="yyyy-MMMM-dd" style="width: 100%" styleClass="input">
                         <p:ajax event="keyup" update="outDateRegistration"/>
                     </p:calendar>
                     <h:outputText id="outDateRegistration" value="#{clientBean.dateRegistration}" />

@@ -49,6 +49,14 @@ public class ClientBean implements Serializable {
 //    /////////////Геттеры / Сеттеры /////////////////////////////////////////
 
 
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
     public int getIdInputClient() {
         return idInputClient;
     }
@@ -171,7 +179,11 @@ public class ClientBean implements Serializable {
     public void deleted(){
 
         clientDAO.deleteClient(idInputClient);
-    }//липовая заглушка
+
+//        clientDAO.deleteClient(client);
+//        client = null;
+
+    }
 
     public void editClient(){
         client = clientDAO.findClint(idInputClient);

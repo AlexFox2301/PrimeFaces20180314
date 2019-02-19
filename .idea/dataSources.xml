@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="mebeldb@localhost" uuid="48a12bda-21e2-4fd9-b85f-cb3f77d61196">
+    <data-source source="LOCAL" name="mebelDB@localhost" uuid="45244a3e-bc3d-4134-8223-9fef20a1935d">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/mebeldb</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/mebelDB</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
@@ -13,7 +13,6 @@
         <property name="characterEncoding" value="utf8" />
         <property name="characterSetResults" value="utf8" />
         <property name="yearIsDateType" value="false" />
-        <property name="createDatabaseIfNotExist" value="yes" />
       </driver-properties>
     </data-source>
   </component>

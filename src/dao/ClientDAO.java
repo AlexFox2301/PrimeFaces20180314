@@ -36,9 +36,11 @@ public class ClientDAO {
     }
 
     public void deleteClient (int idDeletedClien){
+//    public void deleteClient (Client client){
 
         try {
             emClient.remove(emClient.find(Client.class, idDeletedClien));
+//            emClient.remove(client);
             addMessage("Запись удалена!");
         }catch (Exception e){
             addMessage("Пиздец!");

@@ -1,12 +1,15 @@
 <component name="libraryTable">
-  <library name="PrimeFaces-6.1" type="jsf-primefaces">
-    <properties version="6.1" />
+  <library name="primefaces-6.1">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/primefaces-6.1.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="file://$PROJECT_DIR$/lib" />
       <root url="jar://$PROJECT_DIR$/lib/primefaces-6.1-sources.jar!/" />
     </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" type="SOURCES" />
   </library>
 </component>

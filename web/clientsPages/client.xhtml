@@ -20,6 +20,8 @@
     <p align="center" >MTS: +38066 496-62-93 LIFE: +38093 239-60-30 KievStar:+38067 11-28-98</p>
     <h1 align="center">Клиенты</h1>
 
+    <h:form>
+
 
     <p:inputText value="#{clientBean.searchText}" placeholder="Поиск" style="width: 400px; margin: 5px; border-radius: 7px; font-family: serif; font-size: 16px"/>
     <p:commandButton value="Поиск" actionListener="#{clientBean.search}" style="width: 150px; margin: 5px; font-family: serif; font-size: 16px"/>
@@ -29,7 +31,7 @@
 
         <p:layoutUnit position="west" resizable="true" maxSize="120" minSize="50" style="max-height: 150px; border-radius: 8px" styleClass="col_left" >
             <p:button value="Добавить" onclick="window.open('newClienKard.xhtml', 'description', 'width=700, height=620, top=200, left=300, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
-            <p:button value="Редактировать"  href="editClient.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+            <p:button value="Редактировать"  onclick="window.open('editClient.xhtml', 'description', 'width=700, height=620, top=200, left=300, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
             <p:button value="Удалить" onclick="window.open('deleteClient.xhtml', 'description', 'width=500, height=500, top=200, left=500, resizable=no, scrollbars=yes')" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
             <p:button value="Меню" href="../home.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
             <p:button value="Выход" href="../index.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
@@ -38,8 +40,10 @@
 
         <p:layoutUnit position="center">
 
+
             <f:view>
-                <p:dataTable id="clientTable" var="client" value="#{clientBean.clients}" rendered="#{not empty clientBean.clients}" scrollable="true" scrollHeight="550">
+                <p:dataTable id="clientTable" var="client" value="#{clientBean.clients}" rendered="#{not empty clientBean.clients}" rowKey="#{client.id}"
+                             selection="#{clientBean.client}" selectionMode="single" scrollable="true" scrollHeight="550">
 
                     <!--<f:facet name="header">-->
 
@@ -86,7 +90,44 @@
 
                 </p:dataTable>
 
+                <p:contextMenu for="clientTable">
+                    <p:menuitem value="View" update="clientDetail" icon="pi pi-search" oncomplete="PF('clientDialog').show()"/>
+                    <p:menuitem value="Delete" update="clientTable" icon="pi pi-times" action="#{clientBean.deleted()}"/>
+                </p:contextMenu>
 
+                <p:dialog header="Client Kard" widgetVar="clientDialog"  showEffect="fade" hideEffect="fade" resizable="false">
+                    <p:outputPanel id="clientDetail" style="text-align:center;">
+                        <p:panelGrid  columns="2" rendered="#{not empty clientBean.client}" columnClasses="label,value">
+
+                            <h:outputText value="Id:" />
+                            <h:outputText value="#{clientBean.client.id}" />
+
+                            <h:outputText value="Фамилия:" />
+                            <h:outputText value="#{clientBean.client.clientLastName}" />
+
+                            <h:outputText value="Имя:" />
+                            <h:outputText value="#{clientBean.client.clientFirstName}" />
+
+                            <h:outputText value="Отчество" />
+                            <h:outputText value="#{clientBean.client.clientFatherName}" />
+
+                            <h:outputText value="Адрес" />
+                            <h:outputText value="#{clientBean.client.adressHome}" />
+
+                            <h:outputText value="Телефон" />
+                            <h:outputText value="#{clientBean.client.clientPhoneNumder}" />
+
+                            <h:outputText value="Эл.почта" />
+                            <h:outputText value="#{clientBean.client.e_mail}" />
+
+                            <h:outputText value="Дата регистрации" />
+                            <h:outputText value="#{clientBean.client.getDateRegistration()}" />
+
+                            <p:button value="Редактировать"  href="editClient.xhtml" style="width: 96%; margin: 2%; font-family: serif; font-size: 12px"/>
+
+                        </p:panelGrid>
+                    </p:outputPanel>
+                </p:dialog>
 
             </f:view>
         </p:layoutUnit>
@@ -101,6 +142,8 @@
         </p:layoutUnit>
 
     </p:layout>
+
+    </h:form>
 
 </h:body>
 </html>
